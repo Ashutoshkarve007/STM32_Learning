@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Slave_01\Slave_01.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Slave_01\Slave_01.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Sep 13 18:05:43 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Sep 13 18:13:55 2022
 <BR><P>
 <H3>Maximum Stack Usage =        136 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -416,7 +416,7 @@ Global Symbols
 <P><STRONG><a name="[82]"></a>CRC_chk</STRONG> (Thumb, 36 bytes, Stack size 12 bytes, crc.o(i.CRC_chk))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = CRC_chk
 </UL>
-<BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus
+<BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;validate_req
 </UL>
 
 <P><STRONG><a name="[1b]"></a>DMA1_Channel4_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f1xx_it.o(i.DMA1_Channel4_IRQHandler))
@@ -679,7 +679,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
 </UL>
-<BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus
+<BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;validate_req
 </UL>
 
 <P><STRONG><a name="[68]"></a>HAL_UART_TxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_hal_uart.o(i.HAL_UART_TxCpltCallback))
@@ -812,7 +812,7 @@ Global Symbols
 <P><STRONG><a name="[45]"></a>main</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus
+<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;validate_req
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;id_detect
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART2_UART_Init
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART1_UART_Init
@@ -825,8 +825,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[81]"></a>modbus</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, slavemodbus.o(i.modbus))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = modbus &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
+<P><STRONG><a name="[81]"></a>validate_req</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, slavemodbus.o(i.validate_req))
+<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = validate_req &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit_DMA
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRC_chk

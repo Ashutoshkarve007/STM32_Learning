@@ -21,11 +21,11 @@ void slaveid(uint8_t RxBuff[],uint8_t len)
 
 	}
 }
-void modbus(uint8_t MxBuff[],uint8_t len)
+void validate_req(uint8_t MxBuff[],uint8_t len)
 {
-	  uint16_t u16MsgCRC = ((MainBuf[MainBuf_SIZE - 2] << 8) | MainBuf[MainBuf_SIZE - 1]);  //Combine low and High bytes
-	
+	  
 		if(MainBuf[0] == slave_id){
+			uint16_t u16MsgCRC = ((MainBuf[MainBuf_SIZE - 2] << 8) | MainBuf[MainBuf_SIZE - 1]);  //Combine low and High bytes
 			if(CRC_chk(MainBuf,MainBuf_SIZE-2) == u16MsgCRC){
 				HAL_UART_Transmit_DMA(&huart1,MainBuf,sizeof(MainBuf));
 		}

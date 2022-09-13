@@ -25,7 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "string.h"
-#include "slave.h"
+//#include "slave.h"
 #include "slavemodbus.h"
 #include "crc.h"
 /* USER CODE END Includes */
@@ -128,7 +128,8 @@ __HAL_DMA_DISABLE_IT(&hdma_usart2_rx,DMA_IT_HT);
   while (1)
   {
 		
-		modbus(MainBuf,MainBuf_SIZE);   // modbus Transmit 
+		   // modbus Transmit 
+		validate_req(MainBuf,MainBuf_SIZE);
     /* USER CODE END WHILE */
 
 				

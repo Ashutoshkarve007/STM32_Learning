@@ -7,7 +7,7 @@
 #define ID4 HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_15)
 
 void slaveid(uint8_t RxBuff[],uint8_t len);
-void modbus(uint8_t MxBuff[],uint8_t len);
+void validate_req(uint8_t MxBuff[],uint8_t len);
 
 
 void id_detect();
