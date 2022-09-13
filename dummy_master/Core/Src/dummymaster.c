@@ -1,6 +1,7 @@
 #include "dummymaster.h"
 #include "main.h"
 #include "string.h"
+#include "crc.h"
 
 extern UART_HandleTypeDef huart1;
 
@@ -11,5 +12,5 @@ void requestdata()
 	HAL_UART_Transmit_DMA(&huart1,datamodbus,sizeof(datamodbus));
 }
 
-// Check CRC Function
+
 
