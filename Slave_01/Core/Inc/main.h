@@ -70,7 +70,8 @@ void Error_Handler(void);
 #define LED1_Pin GPIO_PIN_11
 #define LED1_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
-
+#define RxBuf_SIZE 4
+#define MainBuf_SIZE 4
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

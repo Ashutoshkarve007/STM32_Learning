@@ -26,6 +26,8 @@
 /* USER CODE BEGIN Includes */
 #include "string.h"
 #include "slave.h"
+#include "slavemodbus.h"
+#include "crc.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,11 +63,11 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-#define RxBuf_SIZE 4
-#define MainBuf_SIZE 4
+
 
 uint8_t RxBuf[RxBuf_SIZE];
 uint8_t MainBuf[MainBuf_SIZE];
+extern uint8_t slave_id;
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
@@ -73,6 +75,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 	{
 		
 		memcpy(MainBuf,RxBuf,Size);
+
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
 		
 	}
@@ -112,6 +115,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  id_detect();               // Slave ID Detection
 
 HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
 __HAL_DMA_DISABLE_IT(&hdma_usart2_rx,DMA_IT_HT);
@@ -123,8 +127,12 @@ __HAL_DMA_DISABLE_IT(&hdma_usart2_rx,DMA_IT_HT);
 
   while (1)
   {
+		
+		modbus(MainBuf,MainBuf_SIZE);   // modbus Transmit 
     /* USER CODE END WHILE */
-   HAL_UART_Transmit_DMA(&huart1,MainBuf,sizeof(MainBuf));
+
+				
+   
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

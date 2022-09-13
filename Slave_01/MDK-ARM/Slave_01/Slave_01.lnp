@@ -7,6 +7,8 @@
 "slave_01\usart.o"
 "slave_01\stm32f1xx_it.o"
 "slave_01\stm32f1xx_hal_msp.o"
+"slave_01\slavemodbus.o"
+"slave_01\crc.o"
 "slave_01\stm32f1xx_hal_gpio_ex.o"
 "slave_01\stm32f1xx_hal_tim.o"
 "slave_01\stm32f1xx_hal_tim_ex.o"
