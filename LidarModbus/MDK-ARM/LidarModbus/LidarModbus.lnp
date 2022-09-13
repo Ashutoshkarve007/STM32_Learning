@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+"lidarmodbus\startup_stm32f103x6.o"
+"lidarmodbus\main.o"
+"lidarmodbus\gpio.o"
+"lidarmodbus\dma.o"
+"lidarmodbus\usart.o"
+"lidarmodbus\stm32f1xx_it.o"
+"lidarmodbus\stm32f1xx_hal_msp.o"
+"lidarmodbus\stm32f1xx_hal_gpio_ex.o"
+"lidarmodbus\stm32f1xx_hal_tim.o"
+"lidarmodbus\stm32f1xx_hal_tim_ex.o"
+"lidarmodbus\stm32f1xx_hal_uart.o"
+"lidarmodbus\stm32f1xx_hal.o"
+"lidarmodbus\stm32f1xx_hal_rcc.o"
+"lidarmodbus\stm32f1xx_hal_rcc_ex.o"
+"lidarmodbus\stm32f1xx_hal_gpio.o"
+"lidarmodbus\stm32f1xx_hal_dma.o"
+"lidarmodbus\stm32f1xx_hal_cortex.o"
+"lidarmodbus\stm32f1xx_hal_pwr.o"
+"lidarmodbus\stm32f1xx_hal_flash.o"
+"lidarmodbus\stm32f1xx_hal_flash_ex.o"
+"lidarmodbus\stm32f1xx_hal_exti.o"
+"lidarmodbus\system_stm32f1xx.o"
+--strict --scatter "LidarModbus\LidarModbus.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "LidarModbus.map" -o LidarModbus\LidarModbus.axf

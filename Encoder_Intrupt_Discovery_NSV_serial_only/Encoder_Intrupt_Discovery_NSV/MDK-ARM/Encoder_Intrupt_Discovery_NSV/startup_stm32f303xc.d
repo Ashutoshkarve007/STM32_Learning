@@ -1,0 +1,1 @@
+encoder_intrupt_discovery_nsv\startup_stm32f303xc.o: startup_stm32f303xc.s

@@ -1,0 +1,28 @@
+--cpu Cortex-M3
+"receivetoidleit\startup_stm32f103x6.o"
+"receivetoidleit\slavemodbus.o"
+"receivetoidleit\main.o"
+"receivetoidleit\gpio.o"
+"receivetoidleit\dma.o"
+"receivetoidleit\usart.o"
+"receivetoidleit\stm32f1xx_it.o"
+"receivetoidleit\stm32f1xx_hal_msp.o"
+"receivetoidleit\stm32f1xx_hal_gpio_ex.o"
+"receivetoidleit\stm32f1xx_hal_tim.o"
+"receivetoidleit\stm32f1xx_hal_tim_ex.o"
+"receivetoidleit\stm32f1xx_hal_uart.o"
+"receivetoidleit\stm32f1xx_hal.o"
+"receivetoidleit\stm32f1xx_hal_rcc.o"
+"receivetoidleit\stm32f1xx_hal_rcc_ex.o"
+"receivetoidleit\stm32f1xx_hal_gpio.o"
+"receivetoidleit\stm32f1xx_hal_dma.o"
+"receivetoidleit\stm32f1xx_hal_cortex.o"
+"receivetoidleit\stm32f1xx_hal_pwr.o"
+"receivetoidleit\stm32f1xx_hal_flash.o"
+"receivetoidleit\stm32f1xx_hal_flash_ex.o"
+"receivetoidleit\stm32f1xx_hal_exti.o"
+"receivetoidleit\system_stm32f1xx.o"
+--strict --scatter "ReceiveToIdleIT\ReceiveToIdleIT.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "ReceiveToIdleIT.map" -o ReceiveToIdleIT\ReceiveToIdleIT.axf

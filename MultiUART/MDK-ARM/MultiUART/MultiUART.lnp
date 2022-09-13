@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+"multiuart\startup_stm32f103x6.o"
+"multiuart\uartringbuffer_multi.o"
+"multiuart\main.o"
+"multiuart\gpio.o"
+"multiuart\usart.o"
+"multiuart\stm32f1xx_it.o"
+"multiuart\stm32f1xx_hal_msp.o"
+"multiuart\stm32f1xx_hal_gpio_ex.o"
+"multiuart\stm32f1xx_hal_tim.o"
+"multiuart\stm32f1xx_hal_tim_ex.o"
+"multiuart\stm32f1xx_hal_uart.o"
+"multiuart\stm32f1xx_hal.o"
+"multiuart\stm32f1xx_hal_rcc.o"
+"multiuart\stm32f1xx_hal_rcc_ex.o"
+"multiuart\stm32f1xx_hal_gpio.o"
+"multiuart\stm32f1xx_hal_dma.o"
+"multiuart\stm32f1xx_hal_cortex.o"
+"multiuart\stm32f1xx_hal_pwr.o"
+"multiuart\stm32f1xx_hal_flash.o"
+"multiuart\stm32f1xx_hal_flash_ex.o"
+"multiuart\stm32f1xx_hal_exti.o"
+"multiuart\system_stm32f1xx.o"
+--strict --scatter "MultiUART\MultiUART.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "MultiUART.map" -o MultiUART\MultiUART.axf
