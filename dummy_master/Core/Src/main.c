@@ -67,16 +67,16 @@ void SystemClock_Config(void);
 
 uint8_t RxBuf[RxBuf_SIZE];
 uint8_t MainBuf[MainBuf_SIZE];
-uint16_t crccheck = 0x00;
+extern uint16_t crccheck;
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-	if(huart->Instance == USART2)
+	if(huart->Instance == USART1)
 	{
 	//	memcpy (MainBuf,RxBuf,Size);
-    HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,1);
-		HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
-		crccheck = CRC_chk(RxBuf,RxBuf_SIZE);
+    
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RxBuf,RxBuf_SIZE);
+	//	crccheck = CRC_chk(RxBuf,RxBuf_SIZE);
 	}
 }
 
@@ -120,10 +120,11 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,1);
   while (1)
   {
     /* USER CODE END WHILE */
-
+  requestdata();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
