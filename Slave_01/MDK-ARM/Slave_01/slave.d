@@ -27,3 +27,4 @@ slave_01\slave.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 slave_01\slave.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 slave_01\slave.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 slave_01\slave.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+slave_01\slave.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
