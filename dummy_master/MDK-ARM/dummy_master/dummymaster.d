@@ -27,3 +27,4 @@ dummy_master\dummymaster.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_fl
 dummy_master\dummymaster.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 dummy_master\dummymaster.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 dummy_master\dummymaster.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+dummy_master\dummymaster.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
