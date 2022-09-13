@@ -30,6 +30,7 @@ Section Cross References
     startup_stm32f103x6.o(.text) refers to startup_stm32f103x6.o(HEAP) for Heap_Mem
     startup_stm32f103x6.o(.text) refers to startup_stm32f103x6.o(STACK) for Stack_Mem
     dummymaster.o(i.requestdata) refers to crc.o(i.CRC_chk) for CRC_chk
+    dummymaster.o(i.requestdata) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     dummymaster.o(i.requestdata) refers to stm32f1xx_hal_uart.o(i.HAL_UART_Transmit_DMA) for HAL_UART_Transmit_DMA
     dummymaster.o(i.requestdata) refers to stm32f1xx_hal.o(i.HAL_Delay) for HAL_Delay
     dummymaster.o(i.requestdata) refers to dummymaster.o(.constdata) for .constdata
@@ -48,7 +49,6 @@ Section Cross References
     main.o(i.main) refers to dma.o(i.MX_DMA_Init) for MX_DMA_Init
     main.o(i.main) refers to usart.o(i.MX_USART1_UART_Init) for MX_USART1_UART_Init
     main.o(i.main) refers to usart.o(i.MX_USART2_UART_Init) for MX_USART2_UART_Init
-    main.o(i.main) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     main.o(i.main) refers to dummymaster.o(i.requestdata) for requestdata
     gpio.o(i.MX_GPIO_Init) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     gpio.o(i.MX_GPIO_Init) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
@@ -811,13 +811,13 @@ Image Symbol Table
     i.UsageFault_Handler                     0x08001860   Section        0  stm32f1xx_it.o(i.UsageFault_Handler)
     i.__NVIC_SetPriority                     0x08001862   Section        0  stm32f1xx_hal_cortex.o(i.__NVIC_SetPriority)
     __NVIC_SetPriority                       0x08001863   Thumb Code    32  stm32f1xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.main                                   0x08001884   Section        0  main.o(i.main)
-    i.requestdata                            0x080018b4   Section        0  dummymaster.o(i.requestdata)
-    .constdata                               0x08001908   Section        4  dummymaster.o(.constdata)
-    .constdata                               0x0800190c   Section      512  crc.o(.constdata)
-    wCRCTable                                0x0800190c   Data         512  crc.o(.constdata)
-    .constdata                               0x08001b0c   Section       16  system_stm32f1xx.o(.constdata)
-    .constdata                               0x08001b1c   Section        8  system_stm32f1xx.o(.constdata)
+    i.main                                   0x08001882   Section        0  main.o(i.main)
+    i.requestdata                            0x080018a0   Section        0  dummymaster.o(i.requestdata)
+    .constdata                               0x08001904   Section        4  dummymaster.o(.constdata)
+    .constdata                               0x08001908   Section      512  crc.o(.constdata)
+    wCRCTable                                0x08001908   Data         512  crc.o(.constdata)
+    .constdata                               0x08001b08   Section       16  system_stm32f1xx.o(.constdata)
+    .constdata                               0x08001b18   Section        8  system_stm32f1xx.o(.constdata)
     .data                                    0x20000000   Section        2  dummymaster.o(.data)
     .data                                    0x20000004   Section       12  stm32f1xx_hal.o(.data)
     .data                                    0x20000010   Section        4  system_stm32f1xx.o(.data)
@@ -1022,12 +1022,12 @@ Image Symbol Table
     USART1_IRQHandler                        0x08001849   Thumb Code     6  stm32f1xx_it.o(i.USART1_IRQHandler)
     USART2_IRQHandler                        0x08001855   Thumb Code     6  stm32f1xx_it.o(i.USART2_IRQHandler)
     UsageFault_Handler                       0x08001861   Thumb Code     2  stm32f1xx_it.o(i.UsageFault_Handler)
-    main                                     0x08001885   Thumb Code    42  main.o(i.main)
-    requestdata                              0x080018b5   Thumb Code    72  dummymaster.o(i.requestdata)
-    AHBPrescTable                            0x08001b0c   Data          16  system_stm32f1xx.o(.constdata)
-    APBPrescTable                            0x08001b1c   Data           8  system_stm32f1xx.o(.constdata)
-    Region$$Table$$Base                      0x08001b24   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001b44   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08001883   Thumb Code    30  main.o(i.main)
+    requestdata                              0x080018a1   Thumb Code    82  dummymaster.o(i.requestdata)
+    AHBPrescTable                            0x08001b08   Data          16  system_stm32f1xx.o(.constdata)
+    APBPrescTable                            0x08001b18   Data           8  system_stm32f1xx.o(.constdata)
+    Region$$Table$$Base                      0x08001b20   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001b40   Number         0  anon$$obj.o(Region$$Table)
     crccheck                                 0x20000000   Data           2  dummymaster.o(.data)
     uwTickFreq                               0x20000004   Data           1  stm32f1xx_hal.o(.data)
     uwTickPrio                               0x20000008   Data           4  stm32f1xx_hal.o(.data)
@@ -1051,9 +1051,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001b58, Max: 0x00008000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001b54, Max: 0x00008000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001b44, Max: 0x00008000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001b40, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1191,26 +1191,25 @@ Memory Map of the image
     0x08001854   0x08001854   0x0000000c   Code   RO          326    i.USART2_IRQHandler  stm32f1xx_it.o
     0x08001860   0x08001860   0x00000002   Code   RO          327    i.UsageFault_Handler  stm32f1xx_it.o
     0x08001862   0x08001862   0x00000020   Code   RO         1366    i.__NVIC_SetPriority  stm32f1xx_hal_cortex.o
-    0x08001882   0x08001882   0x00000002   PAD
-    0x08001884   0x08001884   0x00000030   Code   RO          164    i.main              main.o
-    0x080018b4   0x080018b4   0x00000054   Code   RO           13    i.requestdata       dummymaster.o
-    0x08001908   0x08001908   0x00000004   Data   RO           14    .constdata          dummymaster.o
-    0x0800190c   0x0800190c   0x00000200   Data   RO          134    .constdata          crc.o
-    0x08001b0c   0x08001b0c   0x00000010   Data   RO         1845    .constdata          system_stm32f1xx.o
-    0x08001b1c   0x08001b1c   0x00000008   Data   RO         1846    .constdata          system_stm32f1xx.o
-    0x08001b24   0x08001b24   0x00000020   Data   RO         2041    Region$$Table       anon$$obj.o
+    0x08001882   0x08001882   0x0000001e   Code   RO          164    i.main              main.o
+    0x080018a0   0x080018a0   0x00000064   Code   RO           13    i.requestdata       dummymaster.o
+    0x08001904   0x08001904   0x00000004   Data   RO           14    .constdata          dummymaster.o
+    0x08001908   0x08001908   0x00000200   Data   RO          134    .constdata          crc.o
+    0x08001b08   0x08001b08   0x00000010   Data   RO         1845    .constdata          system_stm32f1xx.o
+    0x08001b18   0x08001b18   0x00000008   Data   RO         1846    .constdata          system_stm32f1xx.o
+    0x08001b20   0x08001b20   0x00000020   Data   RO         2041    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001b44, Size: 0x00000818, Max: 0x00002800, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001b40, Size: 0x00000818, Max: 0x00002800, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08001b44   0x00000002   Data   RW           15    .data               dummymaster.o
-    0x20000002   0x08001b46   0x00000002   PAD
-    0x20000004   0x08001b48   0x0000000c   Data   RW          903    .data               stm32f1xx_hal.o
-    0x20000010   0x08001b54   0x00000004   Data   RW         1847    .data               system_stm32f1xx.o
+    0x20000000   0x08001b40   0x00000002   Data   RW           15    .data               dummymaster.o
+    0x20000002   0x08001b42   0x00000002   PAD
+    0x20000004   0x08001b44   0x0000000c   Data   RW          903    .data               stm32f1xx_hal.o
+    0x20000010   0x08001b50   0x00000004   Data   RW         1847    .data               system_stm32f1xx.o
     0x20000014        -       0x0000000a   Zero   RW          165    .bss                main.o
-    0x2000001e   0x08001b58   0x00000002   PAD
+    0x2000001e   0x08001b54   0x00000002   PAD
     0x20000020        -       0x00000198   Zero   RW          269    .bss                usart.o
     0x200001b8        -       0x00000060   Zero   RW         1915    .bss                c_w.l(libspace.o)
     0x20000218        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f103x6.o
@@ -1226,9 +1225,9 @@ Image component sizes
 
         40          4        512          0          0       1014   crc.o
         92          4          0          0          0        798   dma.o
-        84         12          4          2          0     386189   dummymaster.o
+       100         18          4          2          0     386193   dummymaster.o
        136         14          0          0          0        935   gpio.o
-       178         18          0          0         10       2900   main.o
+       160         12          0          0         10       2892   main.o
         64         26        236          0       1536        820   startup_stm32f103x6.o
        164         28          0         12          0       5625   stm32f1xx_hal.o
        198         14          0          0          0      28983   stm32f1xx_hal_cortex.o
@@ -1242,9 +1241,9 @@ Image component sizes
        512         42          0          0        408       2755   usart.o
 
     ----------------------------------------------------------------------
-      5818        410        808         20       1956     466095   Object Totals
+      5814        410        808         20       1956     466091   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        18          0          0          2          2          0   (incl. Padding)
+        16          0          0          2          2          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1292,15 +1291,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      6172        426        808         20       2052     463063   Grand Totals
-      6172        426        808         20       2052     463063   ELF Image Totals
-      6172        426        808         20          0          0   ROM Totals
+      6168        426        808         20       2052     463059   Grand Totals
+      6168        426        808         20       2052     463059   ELF Image Totals
+      6168        426        808         20          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 6980 (   6.82kB)
+    Total RO  Size (Code + RO Data)                 6976 (   6.81kB)
     Total RW  Size (RW Data + ZI Data)              2072 (   2.02kB)
-    Total ROM Size (Code + RO Data + RW Data)       7000 (   6.84kB)
+    Total ROM Size (Code + RO Data + RW Data)       6996 (   6.83kB)
 
 ==============================================================================
 

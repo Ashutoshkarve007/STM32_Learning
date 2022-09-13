@@ -14,6 +14,7 @@ void requestdata()
 	datamod[2] = crccheck >> 8; 
 	datamod[3] = crccheck & 0xFF;
 	uint8_t datamodbus[4] = {datamod[0],datamod[1],datamod[2],datamod[3]};
+	HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,1);
 	HAL_UART_Transmit_DMA(&huart2,datamodbus,sizeof(datamodbus));
 	HAL_Delay(100);
 }

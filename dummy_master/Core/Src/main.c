@@ -120,7 +120,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,1);
+	
   while (1)
   {
     /* USER CODE END WHILE */
