@@ -427,6 +427,11 @@
               <FileType>1</FileType>
               <FilePath>..\Core\Src\dummymaster.c</FilePath>
             </File>
+            <File>
+              <FileName>crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\crc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

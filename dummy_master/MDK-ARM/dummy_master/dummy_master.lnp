@@ -7,6 +7,7 @@
 "dummy_master\stm32f1xx_it.o"
 "dummy_master\stm32f1xx_hal_msp.o"
 "dummy_master\dummymaster.o"
+"dummy_master\crc.o"
 "dummy_master\stm32f1xx_hal_gpio_ex.o"
 "dummy_master\stm32f1xx_hal_tim.o"
 "dummy_master\stm32f1xx_hal_tim_ex.o"
