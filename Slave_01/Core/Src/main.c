@@ -67,6 +67,9 @@ void SystemClock_Config(void);
 
 uint8_t RxBuf[RxBuf_SIZE];
 uint8_t MainBuf[MainBuf_SIZE];
+uint8_t RxSensorBuf[RxSensorBuf_SIZE];
+uint8_t MainSensorBuf[MainSensorBuf_SIZE];
+
 extern uint8_t slave_id;
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
@@ -79,6 +82,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
 		
 	}
+
 }
 
 /* USER CODE END 0 */
@@ -116,6 +120,8 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   id_detect();               // Slave ID Detection
+
+__HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);
 
 HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
 __HAL_DMA_DISABLE_IT(&hdma_usart2_rx,DMA_IT_HT);

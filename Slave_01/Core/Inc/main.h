@@ -72,6 +72,8 @@ void Error_Handler(void);
 /* USER CODE BEGIN Private defines */
 #define RxBuf_SIZE 4
 #define MainBuf_SIZE 4
+#define RxSensorBuf_SIZE 10
+#define MainSensorBuf_SIZE 9
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
