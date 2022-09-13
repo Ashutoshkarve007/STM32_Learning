@@ -15,7 +15,7 @@ void slaveid(uint8_t RxBuff[],uint8_t len)
 		case 0x01:
 			if(ID1 & ID2 & ID3 & !ID4){
 				if(RxBuff[2] == 0x00){
-					uint8_t datamodbus[10] = {0x01,0x00,dist[0],0x00};
+					uint8_t datamodbus[10] = {slave_id,0x00,dist[0],0x00};
 					HAL_UART_Transmit_DMA(&huart2,datamodbus,sizeof(datamodbus));
 			}
 		}
