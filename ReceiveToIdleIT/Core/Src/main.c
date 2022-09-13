@@ -133,12 +133,13 @@ __HAL_DMA_DISABLE_IT(&hdma_usart1_rx,DMA_IT_HT);
   /* USER CODE BEGIN WHILE */
 	HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,1);
 	
-	binaryId();
+//	binaryId();
 	
   while (1)
   {
 
-		HAL_UART_Transmit_DMA(&huart2,dec,1);
+	//	HAL_UART_Transmit_DMA(&huart2,dec,1);
+		id_detect();
 
     /* USER CODE END WHILE */
 

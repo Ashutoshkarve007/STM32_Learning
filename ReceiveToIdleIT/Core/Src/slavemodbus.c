@@ -6,6 +6,7 @@
 extern UART_HandleTypeDef huart2;
 extern uint8_t dist[1];
 uint8_t dec[1];
+uint8_t slave_id = 0;
 
 void slaveid(uint8_t RxBuff[],uint8_t len)
 {
@@ -82,5 +83,21 @@ void checkboard()
 	else
 	{ 
 		HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin,0);
+	}
+}
+
+void id_detect()
+{
+	if(ID1 == SET){
+		slave_id = slave_id | 0x01;
+	}
+	if(ID2 == SET){
+		slave_id = slave_id | 0x02;
+	}
+	if(ID3 == SET){
+		slave_id = slave_id | 0x03;
+	}
+	if(ID4 == SET){
+		slave_id = slave_id | 0x04;
 	}
 }

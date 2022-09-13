@@ -12,3 +12,5 @@ void modbus(uint8_t RxBuff[],uint8_t len);
 
 void checkboard();
 void binaryId();
+
+void id_detect();
