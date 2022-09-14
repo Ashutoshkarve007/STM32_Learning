@@ -69,6 +69,11 @@ uint8_t RxBuf[RxBuf_SIZE];
 uint8_t MainBuf[MainBuf_SIZE];
 uint8_t RxSensorBuf[RxSensorBuf_SIZE];
 uint8_t MainSensorBuf[MainSensorBuf_SIZE];
+const int HEADER = 0x59;
+uint16_t check;
+uint16_t dist;
+uint8_t slavedata[slavedata_SIZE];
+
 
 extern uint8_t slave_id;
 
@@ -78,9 +83,30 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 	{
 		
 		memcpy(MainBuf,RxBuf,Size);
-
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
 		
+	}
+	else if(huart->Instance == USART1)
+	{
+		memcpy(MainSensorBuf,RxSensorBuf,Size);
+		if(MainSensorBuf[0] == HEADER){
+			if(MainSensorBuf[1] == HEADER){
+				check = MainSensorBuf[0] + MainSensorBuf[1] + MainSensorBuf[2] + MainSensorBuf[3] + MainSensorBuf[4] + MainSensorBuf[5] + MainSensorBuf[6] + MainSensorBuf[7];
+				if(MainSensorBuf[8] == (check & 0xff)){
+					dist = MainSensorBuf[2] + MainSensorBuf[3] * 256;
+					slavedata[0] = slave_id;
+					slavedata[1] = 0x06;
+					slavedata[2] = 0x07;
+					slavedata[3] = dist >> 8;
+					slavedata[4] = dist & 0xFF;
+					uint16_t crccheck = CRC_chk(slavedata,slavedata_SIZE-2);
+					slavedata[5] = crccheck >> 8;
+					slavedata[6] = crccheck & 0xFF;
+				}
+			}
+		}
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RxSensorBuf,RxSensorBuf_SIZE);
+
 	}
 
 }
@@ -121,7 +147,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   id_detect();               // Slave ID Detection
 
-__HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);
+HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RxSensorBuf,RxSensorBuf_SIZE);
+__HAL_DMA_DISABLE_IT(&hdma_usart1_rx,DMA_IT_HT);
 
 HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
 __HAL_DMA_DISABLE_IT(&hdma_usart2_rx,DMA_IT_HT);
