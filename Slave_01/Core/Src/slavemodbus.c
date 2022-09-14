@@ -12,15 +12,7 @@ extern uint8_t MainBuf[MainBuf_SIZE];
 extern uint8_t slavedata[slavedata_SIZE];
 
 uint8_t slave_id = 0;
-uint16_t crccheck;
-uint16_t crcrecive;
-void slaveid(uint8_t RxBuff[],uint8_t len)
-{
-	switch(RxBuff[1])
-	{
 
-	}
-}
 void validate_req(uint8_t MxBuff[],uint8_t len)
 {  
 		if(MainBuf[0] == slave_id){

@@ -25,7 +25,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "string.h"
-//#include "slave.h"
 #include "slavemodbus.h"
 #include "crc.h"
 /* USER CODE END Includes */
@@ -65,15 +64,15 @@ void SystemClock_Config(void);
 
 
 
-uint8_t RxBuf[RxBuf_SIZE];
-uint8_t MainBuf[MainBuf_SIZE];
-uint8_t RxSensorBuf[RxSensorBuf_SIZE];
-uint8_t MainSensorBuf[MainSensorBuf_SIZE];
+uint8_t RxBuf[RxBuf_SIZE];                      //UART2 Recive buffer
+uint8_t MainBuf[MainBuf_SIZE];                  //Main buffer to store data from UART2
+uint8_t RxSensorBuf[RxSensorBuf_SIZE];          //UART1 Recive buffer
+uint8_t MainSensorBuf[MainSensorBuf_SIZE];      //Main buffer to store data from UART1
+uint8_t slavedata[slavedata_SIZE];              //Final data to send from slave device
+
 const int HEADER = 0x59;
 uint16_t check;
 uint16_t dist;
-uint8_t slavedata[slavedata_SIZE];
-
 
 extern uint8_t slave_id;
 
@@ -106,9 +105,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 			}
 		}
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RxSensorBuf,RxSensorBuf_SIZE);
-
 	}
-
 }
 
 /* USER CODE END 0 */
@@ -145,25 +142,25 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  id_detect();               // Slave ID Detection
+  id_detect();                   // Slave ID Detection
 
-HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RxSensorBuf,RxSensorBuf_SIZE);
-__HAL_DMA_DISABLE_IT(&hdma_usart1_rx,DMA_IT_HT);
+	HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RxSensorBuf,RxSensorBuf_SIZE);
+	__HAL_DMA_DISABLE_IT(&hdma_usart1_rx,DMA_IT_HT);
 
-HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
-__HAL_DMA_DISABLE_IT(&hdma_usart2_rx,DMA_IT_HT);
+	HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
+	__HAL_DMA_DISABLE_IT(&hdma_usart2_rx,DMA_IT_HT);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
+	HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_RESET);
   while (1)
   {
-		
-		   // modbus Transmit 
-		validate_req(MainBuf,MainBuf_SIZE);
-    /* USER CODE END WHILE */
+		   
+		validate_req(MainBuf,MainBuf_SIZE);   // modbus Transmit 
+    
+		/* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }

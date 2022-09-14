@@ -393,11 +393,6 @@
           <GroupName>Application/User/Core</GroupName>
           <Files>
             <File>
-              <FileName>slave.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\slave.c</FilePath>
-            </File>
-            <File>
               <FileName>slavemodbus.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\Src\slavemodbus.c</FilePath>

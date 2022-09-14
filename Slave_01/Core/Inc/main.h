@@ -70,11 +70,11 @@ void Error_Handler(void);
 #define LED1_Pin GPIO_PIN_11
 #define LED1_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
-#define RxBuf_SIZE 4
-#define MainBuf_SIZE 4
-#define RxSensorBuf_SIZE 10
-#define MainSensorBuf_SIZE 9
-#define slavedata_SIZE 7
+#define RxBuf_SIZE 4                    //UART 2 data
+#define MainBuf_SIZE 4                  //UART 2 data Size
+#define RxSensorBuf_SIZE 10             //UART 1 data
+#define MainSensorBuf_SIZE 9            //UART 1 data Size
+#define slavedata_SIZE 7                //Final Sensor data Size from Slave
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
