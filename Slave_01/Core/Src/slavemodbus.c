@@ -26,7 +26,9 @@ void validate_req(uint8_t MxBuff[],uint8_t len)
 		if(MainBuf[0] == slave_id){
 			uint16_t u16MsgCRC = ((MainBuf[MainBuf_SIZE - 2] << 8) | MainBuf[MainBuf_SIZE - 1]);  //Combine low and High bytes
 			if(CRC_chk(MainBuf,MainBuf_SIZE-2) == u16MsgCRC){
+				HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_SET);
 				HAL_UART_Transmit_DMA(&huart2,slavedata,sizeof(slavedata));
+				HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_RESET);
 		}
 	}
 }

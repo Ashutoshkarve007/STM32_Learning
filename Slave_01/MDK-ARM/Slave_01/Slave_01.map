@@ -32,6 +32,7 @@ Section Cross References
     slavemodbus.o(i.id_detect) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
     slavemodbus.o(i.id_detect) refers to slavemodbus.o(.data) for .data
     slavemodbus.o(i.validate_req) refers to crc.o(i.CRC_chk) for CRC_chk
+    slavemodbus.o(i.validate_req) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     slavemodbus.o(i.validate_req) refers to stm32f1xx_hal_uart.o(i.HAL_UART_Transmit_DMA) for HAL_UART_Transmit_DMA
     slavemodbus.o(i.validate_req) refers to main.o(.data) for MainBuf
     slavemodbus.o(i.validate_req) refers to slavemodbus.o(.data) for .data
@@ -836,10 +837,10 @@ Image Symbol Table
     i.id_detect                              0x080019f4   Section        0  slavemodbus.o(i.id_detect)
     i.main                                   0x08001a5c   Section        0  main.o(i.main)
     i.validate_req                           0x08001ac8   Section        0  slavemodbus.o(i.validate_req)
-    .constdata                               0x08001b08   Section      512  crc.o(.constdata)
-    wCRCTable                                0x08001b08   Data         512  crc.o(.constdata)
-    .constdata                               0x08001d08   Section       16  system_stm32f1xx.o(.constdata)
-    .constdata                               0x08001d18   Section        8  system_stm32f1xx.o(.constdata)
+    .constdata                               0x08001b20   Section      512  crc.o(.constdata)
+    wCRCTable                                0x08001b20   Data         512  crc.o(.constdata)
+    .constdata                               0x08001d20   Section       16  system_stm32f1xx.o(.constdata)
+    .constdata                               0x08001d30   Section        8  system_stm32f1xx.o(.constdata)
     .data                                    0x20000000   Section        1  slavemodbus.o(.data)
     .data                                    0x20000002   Section       19  main.o(.data)
     .data                                    0x20000018   Section       12  stm32f1xx_hal.o(.data)
@@ -1054,11 +1055,11 @@ Image Symbol Table
     UsageFault_Handler                       0x080019d1   Thumb Code     2  stm32f1xx_it.o(i.UsageFault_Handler)
     id_detect                                0x080019f5   Thumb Code    96  slavemodbus.o(i.id_detect)
     main                                     0x08001a5d   Thumb Code    84  main.o(i.main)
-    validate_req                             0x08001ac9   Thumb Code    46  slavemodbus.o(i.validate_req)
-    AHBPrescTable                            0x08001d08   Data          16  system_stm32f1xx.o(.constdata)
-    APBPrescTable                            0x08001d18   Data           8  system_stm32f1xx.o(.constdata)
-    Region$$Table$$Base                      0x08001d20   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001d40   Number         0  anon$$obj.o(Region$$Table)
+    validate_req                             0x08001ac9   Thumb Code    68  slavemodbus.o(i.validate_req)
+    AHBPrescTable                            0x08001d20   Data          16  system_stm32f1xx.o(.constdata)
+    APBPrescTable                            0x08001d30   Data           8  system_stm32f1xx.o(.constdata)
+    Region$$Table$$Base                      0x08001d38   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001d58   Number         0  anon$$obj.o(Region$$Table)
     slave_id                                 0x20000000   Data           1  slavemodbus.o(.data)
     check                                    0x20000002   Data           2  main.o(.data)
     dist                                     0x20000004   Data           2  main.o(.data)
@@ -1088,9 +1089,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001d68, Max: 0x00008000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001d80, Max: 0x00008000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001d40, Max: 0x00008000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001d58, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1233,28 +1234,28 @@ Memory Map of the image
     0x080019f2   0x080019f2   0x00000002   PAD
     0x080019f4   0x080019f4   0x00000068   Code   RO          119    i.id_detect         slavemodbus.o
     0x08001a5c   0x08001a5c   0x0000006c   Code   RO          199    i.main              main.o
-    0x08001ac8   0x08001ac8   0x00000040   Code   RO          121    i.validate_req      slavemodbus.o
-    0x08001b08   0x08001b08   0x00000200   Data   RO          172    .constdata          crc.o
-    0x08001d08   0x08001d08   0x00000010   Data   RO         1881    .constdata          system_stm32f1xx.o
-    0x08001d18   0x08001d18   0x00000008   Data   RO         1882    .constdata          system_stm32f1xx.o
-    0x08001d20   0x08001d20   0x00000020   Data   RO         2081    Region$$Table       anon$$obj.o
+    0x08001ac8   0x08001ac8   0x00000058   Code   RO          121    i.validate_req      slavemodbus.o
+    0x08001b20   0x08001b20   0x00000200   Data   RO          172    .constdata          crc.o
+    0x08001d20   0x08001d20   0x00000010   Data   RO         1881    .constdata          system_stm32f1xx.o
+    0x08001d30   0x08001d30   0x00000008   Data   RO         1882    .constdata          system_stm32f1xx.o
+    0x08001d38   0x08001d38   0x00000020   Data   RO         2081    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001d40, Size: 0x00000838, Max: 0x00002800, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001d58, Size: 0x00000838, Max: 0x00002800, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08001d40   0x00000001   Data   RW          122    .data               slavemodbus.o
-    0x20000001   0x08001d41   0x00000001   PAD
-    0x20000002   0x08001d42   0x00000013   Data   RW          202    .data               main.o
-    0x20000015   0x08001d55   0x00000003   PAD
-    0x20000018   0x08001d58   0x0000000c   Data   RW          939    .data               stm32f1xx_hal.o
-    0x20000024   0x08001d64   0x00000004   Data   RW         1883    .data               system_stm32f1xx.o
+    0x20000000   0x08001d58   0x00000001   Data   RW          122    .data               slavemodbus.o
+    0x20000001   0x08001d59   0x00000001   PAD
+    0x20000002   0x08001d5a   0x00000013   Data   RW          202    .data               main.o
+    0x20000015   0x08001d6d   0x00000003   PAD
+    0x20000018   0x08001d70   0x0000000c   Data   RW          939    .data               stm32f1xx_hal.o
+    0x20000024   0x08001d7c   0x00000004   Data   RW         1883    .data               system_stm32f1xx.o
     0x20000028        -       0x00000013   Zero   RW          200    .bss                main.o
-    0x2000003b   0x08001d68   0x00000001   PAD
+    0x2000003b   0x08001d80   0x00000001   PAD
     0x2000003c        -       0x00000198   Zero   RW          305    .bss                usart.o
     0x200001d4        -       0x00000060   Zero   RW         1955    .bss                c_w.l(libspace.o)
-    0x20000234   0x08001d68   0x00000004   PAD
+    0x20000234   0x08001d80   0x00000004   PAD
     0x20000238        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f103x6.o
     0x20000438        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103x6.o
 
@@ -1271,7 +1272,7 @@ Image component sizes
        136         14          0          0          0        927   gpio.o
        394         52          0         19         19       3346   main.o
          0          0          0          0          0     385376   slave.o
-       168         26          0          1          0       1949   slavemodbus.o
+       192         28          0          1          0       1981   slavemodbus.o
         64         26        236          0       1536        816   startup_stm32f103x6.o
        128         24          0         12          0       4985   stm32f1xx_hal.o
        198         14          0          0          0      28959   stm32f1xx_hal_cortex.o
@@ -1285,7 +1286,7 @@ Image component sizes
        512         42          0          0        408       2735   usart.o
 
     ----------------------------------------------------------------------
-      6090        454        804         40       1964     467368   Object Totals
+      6114        456        804         40       1964     467400   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         16          0          0          4          1          0   (incl. Padding)
 
@@ -1337,15 +1338,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      6684        470        804         40       2064     464380   Grand Totals
-      6684        470        804         40       2064     464380   ELF Image Totals
-      6684        470        804         40          0          0   ROM Totals
+      6708        472        804         40       2064     464412   Grand Totals
+      6708        472        804         40       2064     464412   ELF Image Totals
+      6708        472        804         40          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 7488 (   7.31kB)
+    Total RO  Size (Code + RO Data)                 7512 (   7.34kB)
     Total RW  Size (RW Data + ZI Data)              2104 (   2.05kB)
-    Total ROM Size (Code + RO Data + RW Data)       7528 (   7.35kB)
+    Total ROM Size (Code + RO Data + RW Data)       7552 (   7.38kB)
 
 ==============================================================================
 
