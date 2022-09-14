@@ -138,8 +138,6 @@ __HAL_DMA_DISABLE_IT(&hdma_usart2_rx,DMA_IT_HT);
 		validate_req(MainBuf,MainBuf_SIZE);
     /* USER CODE END WHILE */
 
-				
-   
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
