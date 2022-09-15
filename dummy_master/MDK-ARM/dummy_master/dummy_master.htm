@@ -3,7 +3,7 @@
 <title>Static Call Graph - [dummy_master\dummy_master.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image dummy_master\dummy_master.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Sep 15 10:33:36 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Sep 15 12:22:45 2022
 <BR><P>
 <H3>Maximum Stack Usage =        136 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -508,7 +508,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[74]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
+<BR><BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_IRQHandler
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;requestdata
 </UL>
 
@@ -793,10 +794,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103x6.o(RESET)
 </UL>
-<P><STRONG><a name="[2f]"></a>USART2_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f1xx_it.o(i.USART2_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = USART2_IRQHandler &rArr; HAL_UART_IRQHandler &rArr; UART_Receive_IT &rArr; HAL_UARTEx_RxEventCallback &rArr; HAL_UARTEx_ReceiveToIdle_DMA &rArr; UART_Start_Receive_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
+<P><STRONG><a name="[2f]"></a>USART2_IRQHandler</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, stm32f1xx_it.o(i.USART2_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = USART2_IRQHandler &rArr; HAL_UART_IRQHandler &rArr; UART_Receive_IT &rArr; HAL_UARTEx_RxEventCallback &rArr; HAL_UARTEx_ReceiveToIdle_DMA &rArr; UART_Start_Receive_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_IRQHandler
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103x6.o(RESET)
 </UL>
@@ -822,7 +824,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[80]"></a>requestdata</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, dummymaster.o(i.requestdata))
+<P><STRONG><a name="[80]"></a>requestdata</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, dummymaster.o(i.requestdata))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = requestdata &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit_DMA
