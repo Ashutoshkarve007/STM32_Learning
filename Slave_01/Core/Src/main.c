@@ -85,13 +85,13 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 	}
 	else if(huart->Instance == USART1)
 	{
-		memcpy(MainSensorBuf,RxSensorBuf,Size);
-		if(MainSensorBuf[0] == HEADER){
-			if(MainSensorBuf[1] == HEADER){
+	//	memcpy(MainSensorBuf,RxSensorBuf,Size);
+		if(RxSensorBuf[0] == HEADER){
+			if(RxSensorBuf[1] == HEADER){
 				transmit = 0;
-				uint16_t check = MainSensorBuf[0] + MainSensorBuf[1] + MainSensorBuf[2] + MainSensorBuf[3] + MainSensorBuf[4] + MainSensorBuf[5] + MainSensorBuf[6] + MainSensorBuf[7];
-				if(MainSensorBuf[8] == (check & 0xff)){
-					uint16_t dist = MainSensorBuf[2] + MainSensorBuf[3] * 256;
+				uint16_t check = RxSensorBuf[0] + RxSensorBuf[1] + RxSensorBuf[2] + RxSensorBuf[3] + RxSensorBuf[4] + RxSensorBuf[5] + RxSensorBuf[6] + RxSensorBuf[7];
+				if(RxSensorBuf[8] == (check & 0xff)){
+					uint16_t dist = RxSensorBuf[2] + RxSensorBuf[3] * 256;
 					slavedata[0] = slave_id;
 					slavedata[1] = 0x06;
 					slavedata[2] = 0x07;

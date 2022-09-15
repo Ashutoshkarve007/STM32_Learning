@@ -12,7 +12,7 @@ extern uint8_t MainBuf[MainBuf_SIZE];
 extern uint8_t slavedata[slavedata_SIZE];
 extern uint8_t slaveerrordata[slaveerrordata_SIZE];
 extern uint8_t transmit;
-
+extern uint8_t uart_dma_flag;
 uint8_t slave_id = 0;
 
 void validate_req(uint8_t MxBuff[],uint8_t len)
@@ -20,6 +20,7 @@ void validate_req(uint8_t MxBuff[],uint8_t len)
 		if(MainBuf[0] == slave_id){
 			uint16_t u16MsgCRC = ((MainBuf[MainBuf_SIZE - 2] << 8) | MainBuf[MainBuf_SIZE - 1]);  //Combine low and High bytes
 			if(CRC_chk(MainBuf,MainBuf_SIZE-2) == u16MsgCRC){
+        uart_dma_flag = 1;
 				HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_SET);
 				if(transmit == 0)
 				{
@@ -29,7 +30,8 @@ void validate_req(uint8_t MxBuff[],uint8_t len)
 				{
 					HAL_UART_Transmit_DMA(&huart2,slaveerrordata,sizeof(slaveerrordata));
 				}
-				HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_RESET);
+			
+				while(uart_dma_flag) HAL_Delay(1);
 		}
 			else
 			{
@@ -40,9 +42,10 @@ void validate_req(uint8_t MxBuff[],uint8_t len)
 				uint16_t crccheck = CRC_chk(slaveerrordata,slaveerrordata_SIZE-2);
 				slaveerrordata[3] = crccheck >> 8;
 				slaveerrordata[4] = crccheck & 0xFF;
+				uart_dma_flag = 1;
 				HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_SET);
 				HAL_UART_Transmit_DMA(&huart2,slaveerrordata,sizeof(slaveerrordata));
-				HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_RESET);	
+				while(uart_dma_flag) HAL_Delay(1);
 			}
 	}
 }

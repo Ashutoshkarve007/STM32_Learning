@@ -51,7 +51,7 @@
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+uint8_t uart_dma_flag = 0;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -283,7 +283,11 @@ void USART2_IRQHandler(void)
   /* USER CODE END USART2_IRQn 0 */
   HAL_UART_IRQHandler(&huart2);
   /* USER CODE BEGIN USART2_IRQn 1 */
-
+  if(uart_dma_flag)
+	{
+		uart_dma_flag = 0;
+		HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_RESET);
+	}
   /* USER CODE END USART2_IRQn 1 */
 }
 
