@@ -10,6 +10,8 @@ extern UART_HandleTypeDef huart2;
 extern uint8_t RxBuf[RxBuf_SIZE];
 extern uint8_t MainBuf[MainBuf_SIZE];
 extern uint8_t slavedata[slavedata_SIZE];
+extern uint8_t slaveerrordata[slaveerrordata_SIZE];
+extern uint8_t transmit;
 
 uint8_t slave_id = 0;
 
@@ -19,9 +21,29 @@ void validate_req(uint8_t MxBuff[],uint8_t len)
 			uint16_t u16MsgCRC = ((MainBuf[MainBuf_SIZE - 2] << 8) | MainBuf[MainBuf_SIZE - 1]);  //Combine low and High bytes
 			if(CRC_chk(MainBuf,MainBuf_SIZE-2) == u16MsgCRC){
 				HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_SET);
+				if(transmit == 0)
+				{
 				HAL_UART_Transmit_DMA(&huart2,slavedata,sizeof(slavedata));
+				}
+				else if(transmit == 1)
+				{
+					HAL_UART_Transmit_DMA(&huart2,slaveerrordata,sizeof(slaveerrordata));
+				}
 				HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_RESET);
 		}
+			else
+			{
+				
+				slaveerrordata[0] = slave_id;
+				slaveerrordata[1] = 0x09;
+				slaveerrordata[2] = 0x03;
+				uint16_t crccheck = CRC_chk(slaveerrordata,slaveerrordata_SIZE-2);
+				slaveerrordata[3] = crccheck >> 8;
+				slaveerrordata[4] = crccheck & 0xFF;
+				HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_SET);
+				HAL_UART_Transmit_DMA(&huart2,slaveerrordata,sizeof(slaveerrordata));
+				HAL_GPIO_WritePin(DE_PIN_GPIO_Port,DE_PIN_Pin,GPIO_PIN_RESET);	
+			}
 	}
 }
 

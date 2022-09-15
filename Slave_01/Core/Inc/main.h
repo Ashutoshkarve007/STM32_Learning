@@ -75,6 +75,7 @@ void Error_Handler(void);
 #define RxSensorBuf_SIZE 10             //UART 1 data
 #define MainSensorBuf_SIZE 9            //UART 1 data Size
 #define slavedata_SIZE 7                //Final Sensor data Size from Slave
+#define slaveerrordata_SIZE 5           //Error data Size from Slave
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

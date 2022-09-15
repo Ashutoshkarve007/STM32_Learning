@@ -71,11 +71,10 @@ extern uint16_t crccheck;
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-	if(huart->Instance == USART1)
+	if(huart->Instance == USART2)
 	{
-	//	memcpy (MainBuf,RxBuf,Size);
-    
-		HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RxBuf,RxBuf_SIZE);
+		memcpy (MainBuf,RxBuf,Size);
+    HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
 	//	crccheck = CRC_chk(RxBuf,RxBuf_SIZE);
 	}
 }
@@ -115,7 +114,8 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+	HAL_UARTEx_ReceiveToIdle_DMA(&huart2,RxBuf,RxBuf_SIZE);
+	__HAL_DMA_DISABLE_IT(&hdma_usart2_rx,DMA_IT_HT);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -123,8 +123,10 @@ int main(void)
 	
   while (1)
   {
+		
+		requestdata();
     /* USER CODE END WHILE */
-  requestdata();
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

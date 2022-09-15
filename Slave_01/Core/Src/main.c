@@ -69,11 +69,9 @@ uint8_t MainBuf[MainBuf_SIZE];                  //Main buffer to store data from
 uint8_t RxSensorBuf[RxSensorBuf_SIZE];          //UART1 Recive buffer
 uint8_t MainSensorBuf[MainSensorBuf_SIZE];      //Main buffer to store data from UART1
 uint8_t slavedata[slavedata_SIZE];              //Final data to send from slave device
-
+uint8_t slaveerrordata[slaveerrordata_SIZE];
 const int HEADER = 0x59;
-uint16_t check;
-uint16_t dist;
-
+uint8_t transmit = 0;
 extern uint8_t slave_id;
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
@@ -90,9 +88,10 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 		memcpy(MainSensorBuf,RxSensorBuf,Size);
 		if(MainSensorBuf[0] == HEADER){
 			if(MainSensorBuf[1] == HEADER){
-				check = MainSensorBuf[0] + MainSensorBuf[1] + MainSensorBuf[2] + MainSensorBuf[3] + MainSensorBuf[4] + MainSensorBuf[5] + MainSensorBuf[6] + MainSensorBuf[7];
+				transmit = 0;
+				uint16_t check = MainSensorBuf[0] + MainSensorBuf[1] + MainSensorBuf[2] + MainSensorBuf[3] + MainSensorBuf[4] + MainSensorBuf[5] + MainSensorBuf[6] + MainSensorBuf[7];
 				if(MainSensorBuf[8] == (check & 0xff)){
-					dist = MainSensorBuf[2] + MainSensorBuf[3] * 256;
+					uint16_t dist = MainSensorBuf[2] + MainSensorBuf[3] * 256;
 					slavedata[0] = slave_id;
 					slavedata[1] = 0x06;
 					slavedata[2] = 0x07;
@@ -102,6 +101,17 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 					slavedata[5] = crccheck >> 8;
 					slavedata[6] = crccheck & 0xFF;
 				}
+			}
+			else
+			{
+				transmit = 1;
+				slaveerrordata[0] = slave_id;
+				slaveerrordata[1] = 0x09;
+				slaveerrordata[2] = 0x01;
+				uint16_t crccheck = CRC_chk(slaveerrordata,slaveerrordata_SIZE-2);
+				slaveerrordata[3] = crccheck >> 8;
+				slaveerrordata[4] = crccheck & 0xFF;
+				
 			}
 		}
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RxSensorBuf,RxSensorBuf_SIZE);
@@ -160,7 +170,7 @@ int main(void)
 		   
 		validate_req(MainBuf,MainBuf_SIZE);   // modbus Transmit 
     
-		/* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
