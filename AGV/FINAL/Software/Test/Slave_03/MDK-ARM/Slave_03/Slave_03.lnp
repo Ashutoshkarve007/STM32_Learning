@@ -1,0 +1,28 @@
+--cpu Cortex-M3
+"slave_03\startup_stm32f103x6.o"
+"slave_03\main.o"
+"slave_03\gpio.o"
+"slave_03\dma.o"
+"slave_03\usart.o"
+"slave_03\stm32f1xx_it.o"
+"slave_03\stm32f1xx_hal_msp.o"
+"slave_03\crc.o"
+"slave_03\stm32f1xx_hal_gpio_ex.o"
+"slave_03\stm32f1xx_hal_tim.o"
+"slave_03\stm32f1xx_hal_tim_ex.o"
+"slave_03\stm32f1xx_hal_uart.o"
+"slave_03\stm32f1xx_hal.o"
+"slave_03\stm32f1xx_hal_rcc.o"
+"slave_03\stm32f1xx_hal_rcc_ex.o"
+"slave_03\stm32f1xx_hal_gpio.o"
+"slave_03\stm32f1xx_hal_dma.o"
+"slave_03\stm32f1xx_hal_cortex.o"
+"slave_03\stm32f1xx_hal_pwr.o"
+"slave_03\stm32f1xx_hal_flash.o"
+"slave_03\stm32f1xx_hal_flash_ex.o"
+"slave_03\stm32f1xx_hal_exti.o"
+"slave_03\system_stm32f1xx.o"
+--strict --scatter "Slave_03\Slave_03.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Slave_03.map" -o Slave_03\Slave_03.axf
