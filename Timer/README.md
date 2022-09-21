@@ -59,21 +59,22 @@ We're going to implement a simple example of timer interrupt: printing `hello wo
 
 Open the `test.ioc` file, to the left of the screen we can see the available timers on this chip:
 
-![Alt text](resources/timers.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191455772-9e12b3eb-8deb-47da-886f-f0a905e1ad6f.png)
+
 
 If you bothered to look at [page 18 of the datasheet](resources/datasheet.pdf), you'll find TIM1 is an advanced timer, while the rest are general purpose timers. They all have 16-bit resolution. TIM1 and TIM3 has 4 channels, and the rest has only 1 channel.
 
 In this example I'm going to use TIM17. Expand it and check the `Activated` box:
 
-![Alt text](resources/t17a.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191456069-144b6f9f-8ae5-40cc-8106-cf7f18ae2d94.png)
 
 This enables timer 17. Now go to the `Configuration` tab, and click the newly appeared `TIM17` button:
 
-![Alt text](resources/config.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191456156-53d11a81-3c21-456c-8ae6-efb98342ea8a.png)
 
 Now we have a bunch of settings change:
 
-![Alt text](resources/t17config.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191456231-6042d271-38d9-4b2e-a9f6-826e9a0e0825.png)
 
 The part we're interested in is `prescaler` and `counter period`, as they determine the timer interrupt frequency. Some maths is going to be involved, but hopefully nothing too heady.
 
@@ -83,13 +84,13 @@ Each timer is essentially a counter with programmable clock input. At each clock
 
 You can find timers' input clock speed on the `Clock Configuration` tab. In this case we see that the `APB1 Timer Clock` is 48MHz, same as system clock:
 
-![Alt text](resources/clktree.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191456361-3e1f8182-a0b3-4daa-b9a9-85daa3d3b13b.png)
 
 This means by default, the counter in timers counts up at 48MHz, which is obviously way too fast. Fortunately, we can slow down this clock by dividing it with a custom value. This value is called the *prescaler*.
 
 Timer prescaler in STM32 is an unsigned 16-bit number by which the input clock is divided. The table below illustrates how it works:
 
-![Alt text](resources/presec.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191456428-1794b4fa-8f92-45a5-8deb-66eb1c5a1702.png)
 
 As you can see, the input clock is divided by `prescaler + 1`. Not too bad.
 
@@ -133,11 +134,11 @@ There is also a detailed formula on page 10 of the [timer overview](resources/ti
 
 Anyway, since that we have figured out the `prescaler` and `counter period`, we can type them in:
 
-![Alt text](resources/numbers.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191456520-3c6848ca-1d3d-4b98-8d7f-9a018c0fd782.png)
 
 Make sure to enable the interrupt in the NVIC tab as well:
 
-![Alt text](resources/int.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191456585-9090ba92-b4e3-4fe8-b43d-abd57a5df01e.png)
 
 That's it! Regenerate the code and launch Keil MDK.
 
@@ -145,17 +146,17 @@ As usual, we look into [provided library files](sample_code/Drivers/STM32F0xx_HA
 
 For this simple example, we just need `HAL_TIM_Base_Start_IT()` to start the timer interrupt. Put it before the main loop:
 
-![Alt text](resources/startit.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191456823-d9b0e6c7-9cbd-4f54-92b2-ef4e7adb881c.png)
 
 Then we need to write our interrupt callback function. The timer overflow interrupt in STM32 HAL is called `HAL_TIM_PeriodElapsedCallback()`. It has a `__weak` attribute, meaning if we write our own function with the same name and arguments, the compiler will use the new one instead.
 
 So just copy this function's definition and put it anywhere you like in `main.c`, for this example it just prints `hello world`:
 
-![Alt text](resources/hw.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191456906-77bb00da-0aa3-4d9e-b301-e5238d466b86.png)
 
 Compile and upload, and you'll see it's printing `hello world` every 100ms:
 
-![Alt text](resources/shw.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191456964-dfd28350-6f65-41a8-b0fd-198c04df9e68.png)
 
 You can use timer interrupts like this to periodically update a screen, scan button matrix input, read a sensor, and much more.
 
@@ -175,29 +176,29 @@ In STM32 we have much more options and control for PWM generation compared to Ar
 
 We'll continue working on the project from the previous section. Go back to STM32Cube and switch to `pinout` page:
 
-![Alt text](resources/pinout.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191457091-679a972f-560e-4385-bbcf-95f0bd69d094.png)
 
 Just like Arduino, only certain pins on STM32 has PWM output. You can find out by left clicking a pin and see if it as `TIMXXCHY` function, where `XX` is timer number, and `Y` is channel number. Let's see what's on the on-board LED, `PA4`:
 
-![Alt text](resources/pa4before.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191457134-a0eee82c-c431-4e4c-b8b2-a6332ed5d0e8.png)
 
 Bingo! `PA4` has `TIM14CH1`, meaning it's the output of timer 14 channel 1, and we can use it for PWM.
 
 Click `TIM14CH1` to switch to that function:
 
-![Alt text](resources/orange.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191457176-eaa64296-c567-4754-bffc-978d9659182d.png)
 
 Then on the side bar, activate TIM14, then set channel 1 function to `PWM Generation CH1`:
 
-![Alt text](resources/t14opt.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191457225-447c0ec8-69fc-413a-9bd0-6e54c7ba2cec.png)
 
 Go to the `configuration` page and click on the newly appeared `TIM14` button:
 
-![Alt text](resources/t14b.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191457286-4da623f4-b321-4487-973d-afd28e503b8b.png)
 
 Now we're back at the counter settings, except this time there is an additional PWM1 section:
 
-![Alt text](resources/t14set.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191457337-86b15298-8572-453e-9617-8f6dbd344acb.png)
 
 Just like last time, we have `prescaler` and `counter period`. Except in this case, instead of the interrupt frequency, they determine the PWM frequency.
 
@@ -211,7 +212,7 @@ For example, if `counter period` is 1000 and you set `pulse` to 900, then the du
 
 Anyway, let's type the numbers in and see what happens:
 
-![Alt text](resources/t14done.png)
+![Alt text](https://user-images.githubusercontent.com/89137956/191457469-c7341d5c-9f91-435c-a1d3-b5a11dd54018.png)
 
 Generate the code, then go to Keil IDE.
 
