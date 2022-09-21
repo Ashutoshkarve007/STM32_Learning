@@ -3,7 +3,7 @@
 https://controllerstech.com/uart-dma-with-idle-line-detection/
 
 
-# Lesson 4: STM32 Timer Interrupts, PWM, and Watchdog
+# STM32 Timer Interrupts, PWM, and Watchdog
 
 [Landing Page: Intro and Required Hardwares](../README.md)
 
