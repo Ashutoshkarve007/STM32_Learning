@@ -1,5 +1,6 @@
 # STM32_Learning
  Learn STM32 together. 
+ Create your name folder, >> create pull request.
  
 
 *Slave Board*
