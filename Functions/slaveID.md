@@ -52,7 +52,7 @@ HAL_Delay(100);
 ////////////+++++++++++++++++++///////////////
 
 
-
+...
 void id_detect()
 {
 	if(ID1 == SET){
@@ -68,4 +68,4 @@ void id_detect()
 		slave_id = slave_id | 0x08;
 	}
 }
-
+...
