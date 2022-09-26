@@ -1,4 +1,4 @@
-# DE Enable pin for Modbus transmittion 
+// DE Enable pin for Modbus transmittion 
 
 
 void USART2_IRQHandler(void)
