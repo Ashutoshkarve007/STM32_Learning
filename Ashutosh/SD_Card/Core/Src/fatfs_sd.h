@@ -25,6 +25,8 @@
 #define CT_SDC		0x06		/* SD */
 #define CT_BLOCK	0x08		/* Block addressing */
 
+//typedef BYTE	DSTATUS;
+
 /* Functions */
 DSTATUS SD_disk_initialize (BYTE pdrv);
 DSTATUS SD_disk_status (BYTE pdrv);

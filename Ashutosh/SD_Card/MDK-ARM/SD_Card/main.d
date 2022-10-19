@@ -33,4 +33,6 @@ sd_card/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Middlewares\Third_Party\FatFs\src\ff_gen_drv.h \
   ..\Middlewares\Third_Party\FatFs\src\diskio.h \
   ..\FATFS\Target\user_diskio.h ..\Core\Inc\spi.h ..\Core\Inc\usart.h \
-  ..\Core\Inc\gpio.h
+  ..\Core\Inc\gpio.h ..\Core\Src\fatfs_sd.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h
