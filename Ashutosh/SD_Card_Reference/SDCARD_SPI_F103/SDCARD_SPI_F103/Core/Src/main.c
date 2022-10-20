@@ -133,7 +133,7 @@ int main(void)
   MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_Delay (500);
+  HAL_Delay (1000);
 
   fresult = f_mount(&fs, "/", 1);
   	if (fresult != FR_OK) send_uart ("ERROR!!! in mounting SD CARD...\n\n");
@@ -154,7 +154,7 @@ int main(void)
   	send_uart(buffer);
   	clear_buffer();
 
-
+    HAL_Delay(500);
 
   	/************* The following operation is using PUTS and GETS *********************/
 
@@ -186,7 +186,7 @@ int main(void)
 
 
 
-
+HAL_Delay(500);
   	/**************** The following operation is using f_write and f_read **************************/
 
   	/* Create second file with read write access and open it */
@@ -206,7 +206,7 @@ int main(void)
 
   	// clearing buffer to show that result obtained is from the file
   	clear_buffer();
-
+HAL_Delay(500);
   	/* Open second file to read */
   	fresult = f_open(&fil, "file2.txt", FA_READ);
   	if (fresult == FR_OK)send_uart ("file2.txt is open and the data is shown below\n");
@@ -222,7 +222,7 @@ int main(void)
 
   	clear_buffer();
 
-
+HAL_Delay(500);
   	/*********************UPDATING an existing file ***************************/
 
   	/* Open the file with write access */
@@ -239,7 +239,7 @@ int main(void)
   	f_close (&fil);
 
   	clear_buffer();
-
+HAL_Delay(500);
   	/* Open to read the file */
   	fresult = f_open (&fil, "file2.txt", FA_READ);
 
@@ -253,7 +253,7 @@ int main(void)
   	f_close(&fil);
 
   	clear_buffer();
-
+HAL_Delay(500);
 
   	/*************************REMOVING FILES FROM THE DIRECTORY ****************************/
 
