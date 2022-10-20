@@ -1,9 +1,9 @@
 --cpu Cortex-M3
 "sdcard_spi_f103\startup_stm32f103xb.o"
+"sdcard_spi_f103\fatfs_sd.o"
 "sdcard_spi_f103\main.o"
 "sdcard_spi_f103\stm32f1xx_it.o"
 "sdcard_spi_f103\stm32f1xx_hal_msp.o"
-"sdcard_spi_f103\fatfs_sd.o"
 "sdcard_spi_f103\user_diskio.o"
 "sdcard_spi_f103\fatfs.o"
 "sdcard_spi_f103\stm32f1xx_hal_gpio_ex.o"
@@ -26,6 +26,7 @@
 "sdcard_spi_f103\ff.o"
 "sdcard_spi_f103\ff_gen_drv.o"
 "sdcard_spi_f103\syscall.o"
+"sdcard_spi_f103\ccsbcs.o"
 --strict --scatter "SDCARD_SPI_F103\SDCARD_SPI_F103.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
