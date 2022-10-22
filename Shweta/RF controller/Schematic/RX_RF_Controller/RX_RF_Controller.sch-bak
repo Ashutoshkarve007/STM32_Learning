@@ -1,0 +1,2554 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_ST_STM32F1:STM32F103C8Tx U?
+U 1 1 63358CB8
+P 4770 2560
+F 0 "U?" H 5280 1030 50  0000 C CNN
+F 1 "STM32F103C8Tx" H 5290 890 50  0000 C CNN
+F 2 "Package_QFP:LQFP-48_7x7mm_P0.5mm" H 4170 1160 50  0001 R CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00161566.pdf" H 4770 2560 50  0001 C CNN
+	1    4770 2560
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 6335DB4A
+P 4770 770
+F 0 "#PWR?" H 4770 620 50  0001 C CNN
+F 1 "+3.3V" H 4770 920 50  0000 C CNN
+F 2 "" H 4770 770 50  0001 C CNN
+F 3 "" H 4770 770 50  0001 C CNN
+	1    4770 770 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4570 1060 4570 840 
+Wire Wire Line
+	4970 840  4970 1060
+Wire Wire Line
+	4670 1060 4670 840 
+Wire Wire Line
+	4570 840  4670 840 
+Connection ~ 4670 840 
+Wire Wire Line
+	4870 1060 4870 840 
+Connection ~ 4870 840 
+Wire Wire Line
+	4870 840  4970 840 
+Wire Wire Line
+	4770 1060 4770 840 
+Wire Wire Line
+	4670 840  4770 840 
+Wire Wire Line
+	4770 840  4770 770 
+Connection ~ 4770 840 
+Wire Wire Line
+	4770 840  4870 840 
+Text GLabel 3970 1260 0    50   Input ~ 0
+NRST
+$Comp
+L Switch:SW_MEC_5E SW?
+U 1 1 632EFE79
+P 1910 1280
+F 0 "SW?" H 1900 1640 50  0000 C CNN
+F 1 "Reset Switch" H 1940 1560 50  0000 C CNN
+F 2 "" H 1910 1580 50  0001 C CNN
+F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=1371" H 1910 1580 50  0001 C CNN
+	1    1910 1280
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 632F14EC
+P 1650 790
+F 0 "#PWR?" H 1650 640 50  0001 C CNN
+F 1 "+3.3V" H 1650 940 50  0000 C CNN
+F 2 "" H 1650 790 50  0001 C CNN
+F 3 "" H 1650 790 50  0001 C CNN
+	1    1650 790 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 632F29FE
+P 1650 1010
+F 0 "R?" H 1490 1050 50  0000 L CNN
+F 1 "10K" H 1450 970 50  0000 L CNN
+F 2 "" H 1650 1010 50  0001 C CNN
+F 3 "~" H 1650 1010 50  0001 C CNN
+	1    1650 1010
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 790  1650 910 
+Wire Wire Line
+	1650 1110 1650 1180
+Wire Wire Line
+	1650 1280 1710 1280
+Wire Wire Line
+	1710 1180 1650 1180
+Connection ~ 1650 1180
+Wire Wire Line
+	1650 1180 1650 1280
+$Comp
+L power:GND #PWR?
+U 1 1 632F3F5C
+P 2310 1400
+F 0 "#PWR?" H 2310 1150 50  0001 C CNN
+F 1 "GND" H 2315 1227 50  0000 C CNN
+F 2 "" H 2310 1400 50  0001 C CNN
+F 3 "" H 2310 1400 50  0001 C CNN
+	1    2310 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2110 1180 2190 1180
+Wire Wire Line
+	2190 1180 2190 1280
+Wire Wire Line
+	2110 1280 2190 1280
+$Comp
+L Device:C_Small C?
+U 1 1 632F66B4
+P 1920 1430
+F 0 "C?" V 2030 1440 50  0000 C CNN
+F 1 "100nF" V 2100 1450 50  0000 C CNN
+F 2 "" H 1920 1430 50  0001 C CNN
+F 3 "~" H 1920 1430 50  0001 C CNN
+	1    1920 1430
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1820 1430 1650 1430
+Wire Wire Line
+	1650 1430 1650 1280
+Connection ~ 1650 1280
+Wire Wire Line
+	2310 1400 2310 1180
+Wire Wire Line
+	2310 1180 2190 1180
+Connection ~ 2190 1180
+Wire Wire Line
+	2190 1430 2190 1280
+Wire Wire Line
+	2020 1430 2190 1430
+Connection ~ 2190 1280
+Text GLabel 1550 1280 0    50   Input ~ 0
+NRST
+Wire Wire Line
+	4070 1260 3970 1260
+Wire Wire Line
+	1550 1280 1650 1280
+$Comp
+L automata:Crystal Y?
+U 1 1 632F9756
+P 3780 1720
+F 0 "Y?" V 3990 1760 50  0000 L CNN
+F 1 "8MHz" V 4060 1650 50  0000 L CNN
+F 2 "" H 3780 1720 50  0001 C CNN
+F 3 "~" H 3780 1720 50  0001 C CNN
+	1    3780 1720
+	0    1    1    0   
+$EndComp
+$Comp
+L automata:Crystal Y?
+U 1 1 632FA725
+P 3790 2390
+F 0 "Y?" V 4000 2360 50  0000 L CNN
+F 1 "Crystal" V 4050 2310 50  0000 L CNN
+F 2 "" H 3790 2390 50  0001 C CNN
+F 3 "~" H 3790 2390 50  0001 C CNN
+	1    3790 2390
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 632FC816
+P 3440 1540
+F 0 "C?" V 3550 1550 50  0000 C CNN
+F 1 "10pF" V 3620 1560 50  0000 C CNN
+F 2 "" H 3440 1540 50  0001 C CNN
+F 3 "~" H 3440 1540 50  0001 C CNN
+	1    3440 1540
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 632FD56F
+P 3440 1880
+F 0 "C?" V 3550 1890 50  0000 C CNN
+F 1 "10pF" V 3620 1900 50  0000 C CNN
+F 2 "" H 3440 1880 50  0001 C CNN
+F 3 "~" H 3440 1880 50  0001 C CNN
+	1    3440 1880
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 632FD964
+P 3450 2220
+F 0 "C?" V 3560 2230 50  0000 C CNN
+F 1 "10pF" V 3630 2240 50  0000 C CNN
+F 2 "" H 3450 2220 50  0001 C CNN
+F 3 "~" H 3450 2220 50  0001 C CNN
+	1    3450 2220
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 632FDCB7
+P 3450 2540
+F 0 "C?" V 3560 2550 50  0000 C CNN
+F 1 "10pF" V 3630 2560 50  0000 C CNN
+F 2 "" H 3450 2540 50  0001 C CNN
+F 3 "~" H 3450 2540 50  0001 C CNN
+	1    3450 2540
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3540 1540 3780 1540
+Wire Wire Line
+	3780 1540 3780 1570
+Wire Wire Line
+	3540 1880 3780 1880
+Wire Wire Line
+	3780 1880 3780 1870
+Wire Wire Line
+	4070 1660 4010 1660
+Wire Wire Line
+	4010 1660 4010 1540
+Wire Wire Line
+	4010 1540 3780 1540
+Connection ~ 3780 1540
+Wire Wire Line
+	4070 1760 4000 1760
+Wire Wire Line
+	4000 1760 4000 1880
+Wire Wire Line
+	4000 1880 3780 1880
+Connection ~ 3780 1880
+Wire Wire Line
+	3340 1540 3260 1540
+Wire Wire Line
+	3260 1540 3260 1710
+Wire Wire Line
+	3260 1880 3340 1880
+$Comp
+L power:GND #PWR?
+U 1 1 63303141
+P 3040 1810
+F 0 "#PWR?" H 3040 1560 50  0001 C CNN
+F 1 "GND" H 3045 1637 50  0000 C CNN
+F 2 "" H 3040 1810 50  0001 C CNN
+F 3 "" H 3040 1810 50  0001 C CNN
+	1    3040 1810
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3040 1810 3040 1710
+Wire Wire Line
+	3040 1710 3260 1710
+Connection ~ 3260 1710
+Wire Wire Line
+	3260 1710 3260 1880
+Wire Wire Line
+	3550 2220 3790 2220
+Wire Wire Line
+	3790 2220 3790 2240
+Wire Wire Line
+	3550 2540 3790 2540
+Wire Wire Line
+	4070 2060 3860 2060
+Wire Wire Line
+	3860 2060 3860 2220
+Wire Wire Line
+	3860 2220 3790 2220
+Connection ~ 3790 2220
+Wire Wire Line
+	4070 2160 3970 2160
+Wire Wire Line
+	3970 2160 3970 2540
+Wire Wire Line
+	3970 2540 3790 2540
+Connection ~ 3790 2540
+Wire Wire Line
+	3350 2220 3230 2220
+Wire Wire Line
+	3230 2220 3230 2340
+Wire Wire Line
+	3230 2540 3350 2540
+$Comp
+L power:GND #PWR?
+U 1 1 6330BFE4
+P 3050 2370
+F 0 "#PWR?" H 3050 2120 50  0001 C CNN
+F 1 "GND" H 3055 2197 50  0000 C CNN
+F 2 "" H 3050 2370 50  0001 C CNN
+F 3 "" H 3050 2370 50  0001 C CNN
+	1    3050 2370
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 2370 3050 2340
+Wire Wire Line
+	3050 2340 3230 2340
+Connection ~ 3230 2340
+Wire Wire Line
+	3230 2340 3230 2540
+$Comp
+L power:GND #PWR?
+U 1 1 6330D64E
+P 4720 4200
+F 0 "#PWR?" H 4720 3950 50  0001 C CNN
+F 1 "GND" H 4725 4027 50  0000 C CNN
+F 2 "" H 4720 4200 50  0001 C CNN
+F 3 "" H 4720 4200 50  0001 C CNN
+	1    4720 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4870 4060 4870 4130
+Wire Wire Line
+	4870 4130 4770 4130
+Wire Wire Line
+	4570 4130 4570 4060
+Wire Wire Line
+	4770 4060 4770 4130
+Connection ~ 4770 4130
+Wire Wire Line
+	4570 4130 4670 4130
+Wire Wire Line
+	4720 4200 4720 4130
+Connection ~ 4720 4130
+Wire Wire Line
+	4720 4130 4770 4130
+Wire Wire Line
+	4670 4060 4670 4130
+Connection ~ 4670 4130
+Wire Wire Line
+	4670 4130 4720 4130
+$Comp
+L Device:C_Small C?
+U 1 1 633169F6
+P 1900 2460
+F 0 "C?" H 1840 2530 50  0000 C CNN
+F 1 "1uF" H 1780 2590 50  0000 C CNN
+F 2 "" H 1900 2460 50  0001 C CNN
+F 3 "~" H 1900 2460 50  0001 C CNN
+	1    1900 2460
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 633172AD
+P 2160 2460
+F 0 "C?" H 2100 2540 50  0000 C CNN
+F 1 "100nF" H 2040 2600 50  0000 C CNN
+F 2 "" H 2160 2460 50  0001 C CNN
+F 3 "~" H 2160 2460 50  0001 C CNN
+	1    2160 2460
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 63317518
+P 2060 2240
+F 0 "#PWR?" H 2060 2090 50  0001 C CNN
+F 1 "+3.3V" H 2060 2390 50  0000 C CNN
+F 2 "" H 2060 2240 50  0001 C CNN
+F 3 "" H 2060 2240 50  0001 C CNN
+	1    2060 2240
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 63317BF3
+P 2040 2730
+F 0 "#PWR?" H 2040 2480 50  0001 C CNN
+F 1 "GND" H 2045 2557 50  0000 C CNN
+F 2 "" H 2040 2730 50  0001 C CNN
+F 3 "" H 2040 2730 50  0001 C CNN
+	1    2040 2730
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 2360 1900 2310
+Wire Wire Line
+	1900 2310 2060 2310
+Wire Wire Line
+	2160 2310 2160 2360
+Wire Wire Line
+	2060 2240 2060 2310
+Connection ~ 2060 2310
+Wire Wire Line
+	2060 2310 2160 2310
+Wire Wire Line
+	1900 2560 1900 2640
+Wire Wire Line
+	1900 2640 2040 2640
+Wire Wire Line
+	2160 2640 2160 2560
+Wire Wire Line
+	2040 2730 2040 2640
+Connection ~ 2040 2640
+Wire Wire Line
+	2040 2640 2160 2640
+$Comp
+L automata:Conn_02x03 J?
+U 1 1 633439C0
+P 1940 3990
+F 0 "J?" H 1990 4307 50  0000 C CNN
+F 1 "BOOT" H 1990 4216 50  0000 C CNN
+F 2 "" H 1940 3990 50  0001 C CNN
+F 3 "~" H 1940 3990 50  0001 C CNN
+	1    1940 3990
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 633456BC
+P 1980 3580
+F 0 "#PWR?" H 1980 3430 50  0001 C CNN
+F 1 "+3.3V" H 1980 3730 50  0000 C CNN
+F 2 "" H 1980 3580 50  0001 C CNN
+F 3 "" H 1980 3580 50  0001 C CNN
+	1    1980 3580
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1740 3890 1650 3890
+Wire Wire Line
+	1650 3890 1650 3580
+Wire Wire Line
+	1650 3580 1980 3580
+Wire Wire Line
+	2360 3890 2360 3580
+Wire Wire Line
+	2360 3580 1980 3580
+Connection ~ 1980 3580
+Wire Wire Line
+	2360 3890 2240 3890
+$Comp
+L power:GND #PWR?
+U 1 1 6334ED12
+P 1990 4310
+F 0 "#PWR?" H 1990 4060 50  0001 C CNN
+F 1 "GND" H 1995 4137 50  0000 C CNN
+F 2 "" H 1990 4310 50  0001 C CNN
+F 3 "" H 1990 4310 50  0001 C CNN
+	1    1990 4310
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1740 4090 1650 4090
+Wire Wire Line
+	1650 4090 1650 4310
+Wire Wire Line
+	1650 4310 1990 4310
+Wire Wire Line
+	2240 4090 2360 4090
+Wire Wire Line
+	2360 4090 2360 4310
+Wire Wire Line
+	2360 4310 1990 4310
+Connection ~ 1990 4310
+$Comp
+L Device:R_Small R?
+U 1 1 63354709
+P 1550 3990
+F 0 "R?" V 1650 3850 50  0000 L CNN
+F 1 "100K" V 1720 3840 50  0000 L CNN
+F 2 "" H 1550 3990 50  0001 C CNN
+F 3 "~" H 1550 3990 50  0001 C CNN
+	1    1550 3990
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 63354E4B
+P 2420 3990
+F 0 "R?" V 2520 3990 50  0000 L CNN
+F 1 "100K" V 2590 3970 50  0000 L CNN
+F 2 "" H 2420 3990 50  0001 C CNN
+F 3 "~" H 2420 3990 50  0001 C CNN
+	1    2420 3990
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1740 3990 1650 3990
+Text GLabel 1400 3990 0    50   Input ~ 0
+BOOT0
+Wire Wire Line
+	1450 3990 1400 3990
+Text GLabel 2600 3990 2    50   Input ~ 0
+BOOT1
+Wire Wire Line
+	2240 3990 2320 3990
+Wire Wire Line
+	2520 3990 2600 3990
+Text GLabel 3990 1460 0    50   Input ~ 0
+BOOT0
+Wire Wire Line
+	4070 1460 3990 1460
+Text GLabel 3850 2870 0    50   Input ~ 0
+BOOT1
+Wire Wire Line
+	4070 2560 3970 2560
+Wire Wire Line
+	3970 2560 3970 2870
+Wire Wire Line
+	3970 2870 3850 2870
+Text GLabel 4300 5830 0    50   Input ~ 0
+GND
+Text GLabel 4300 5930 0    50   Input ~ 0
+CE
+Text GLabel 4310 6030 0    50   Input ~ 0
+SCK
+Text GLabel 4320 6130 0    50   Input ~ 0
+MISO
+Text GLabel 5060 5830 2    50   Input ~ 0
+VCC
+Text GLabel 5060 5930 2    50   Input ~ 0
+CSN
+Text GLabel 5060 6030 2    50   Input ~ 0
+MOSI
+Wire Wire Line
+	4410 5830 4360 5830
+Wire Wire Line
+	4410 5930 4300 5930
+Wire Wire Line
+	4410 6030 4310 6030
+Wire Wire Line
+	4410 6130 4320 6130
+Wire Wire Line
+	4910 5830 4970 5830
+Wire Wire Line
+	4910 5930 5060 5930
+Wire Wire Line
+	4910 6030 5060 6030
+$Comp
+L Device:C_Small C?
+U 1 1 6339EB89
+P 4640 5450
+F 0 "C?" V 4590 5570 50  0000 C CNN
+F 1 "10uF/25V" V 4500 5500 50  0000 C CNN
+F 2 "" H 4640 5450 50  0001 C CNN
+F 3 "~" H 4640 5450 50  0001 C CNN
+	1    4640 5450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4540 5450 4360 5450
+Wire Wire Line
+	4360 5450 4360 5830
+Connection ~ 4360 5830
+Wire Wire Line
+	4360 5830 4300 5830
+Wire Wire Line
+	4740 5450 4970 5450
+Wire Wire Line
+	4970 5450 4970 5830
+Connection ~ 4970 5830
+Wire Wire Line
+	4970 5830 5060 5830
+Text GLabel 3970 3260 0    50   Input ~ 0
+CE
+Wire Wire Line
+	4070 3260 3970 3260
+Text GLabel 5430 2860 2    50   Input ~ 0
+SCK
+Wire Wire Line
+	5370 2860 5430 2860
+Text GLabel 5430 2960 2    50   Input ~ 0
+MISO
+Wire Wire Line
+	5370 2960 5430 2960
+Text GLabel 5430 3060 2    50   Input ~ 0
+MOSI
+Wire Wire Line
+	5370 3060 5430 3060
+Text GLabel 3980 3160 0    50   Input ~ 0
+CSN
+Wire Wire Line
+	3980 3160 4070 3160
+$Comp
+L power:+3.3V #PWR?
+U 1 1 633BCE80
+P 4970 5340
+F 0 "#PWR?" H 4970 5190 50  0001 C CNN
+F 1 "+3.3V" H 4970 5490 50  0000 C CNN
+F 2 "" H 4970 5340 50  0001 C CNN
+F 3 "" H 4970 5340 50  0001 C CNN
+	1    4970 5340
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4970 5340 4970 5450
+Connection ~ 4970 5450
+$Comp
+L power:GND #PWR?
+U 1 1 633C1731
+P 4360 6270
+F 0 "#PWR?" H 4360 6020 50  0001 C CNN
+F 1 "GND" H 4365 6097 50  0000 C CNN
+F 2 "" H 4360 6270 50  0001 C CNN
+F 3 "" H 4360 6270 50  0001 C CNN
+	1    4360 6270
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4360 5830 4360 6270
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 633C790E
+P 10630 1340
+F 0 "J?" H 10710 1382 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" H 10710 1291 50  0000 L CNN
+F 2 "" H 10630 1340 50  0001 C CNN
+F 3 "~" H 10630 1340 50  0001 C CNN
+	1    10630 1340
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Power-Relays-Over-2-Amps:G5LE-14_DC5 RLY?
+U 1 1 633D1135
+P 9680 1380
+F 0 "RLY?" H 9880 1020 50  0000 L CNN
+F 1 "G5LE-14_DC5" H 9870 930 50  0000 L CNN
+F 2 "digikey-footprints:Relay_THT_G5LE-14" H 9880 1580 50  0001 L CNN
+F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 9880 1680 60  0001 L CNN
+F 4 "Z1011-ND" H 9880 1780 60  0001 L CNN "Digi-Key_PN"
+F 5 "G5LE-14 DC5" H 9880 1880 60  0001 L CNN "MPN"
+F 6 "Relays" H 9880 1980 60  0001 L CNN "Category"
+F 7 "Power Relays, Over 2 Amps" H 9880 2080 60  0001 L CNN "Family"
+F 8 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 9880 2180 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/omron-electronics-inc-emc-div/G5LE-14-DC5/Z1011-ND/280371" H 9880 2280 60  0001 L CNN "DK_Detail_Page"
+F 10 "RELAY GEN PURPOSE SPDT 10A 5V" H 9880 2380 60  0001 L CNN "Description"
+F 11 "Omron Electronics Inc-EMC Div" H 9880 2480 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 9880 2580 60  0001 L CNN "Status"
+	1    9680 1380
+	1    0    0    -1  
+$EndComp
+$Comp
+L automata:1N4001 D?
+U 1 1 633D36D4
+P 9100 1410
+F 0 "D?" V 9250 1430 50  0000 L CNN
+F 1 "1N4001" V 9340 1420 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 9100 1235 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 9100 1410 50  0001 C CNN
+	1    9100 1410
+	0    1    1    0   
+$EndComp
+$Comp
+L Isolator:EL817 U?
+U 1 1 633D50AF
+P 8630 1990
+F 0 "U?" H 8630 2315 50  0000 C CNN
+F 1 "EL817" H 8630 2224 50  0000 C CNN
+F 2 "Package_DIP:DIP-4_W7.62mm" H 8430 1790 50  0001 L CIN
+F 3 "http://www.everlight.com/file/ProductFile/EL817.pdf" H 8630 1990 50  0001 L CNN
+	1    8630 1990
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 633DE152
+P 8240 2370
+F 0 "D?" H 8280 2490 50  0000 C CNN
+F 1 "LED" H 8270 2580 50  0000 C CNN
+F 2 "" H 8240 2370 50  0001 C CNN
+F 3 "~" H 8240 2370 50  0001 C CNN
+	1    8240 2370
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 633DE84F
+P 8240 1510
+F 0 "R?" V 8420 1460 50  0000 L CNN
+F 1 "1K" V 8330 1450 50  0000 L CNN
+F 2 "" H 8240 1510 50  0001 C CNN
+F 3 "~" H 8240 1510 50  0001 C CNN
+	1    8240 1510
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8240 1610 8240 1890
+Wire Wire Line
+	8240 1890 8330 1890
+Wire Wire Line
+	8240 2220 8240 2090
+Wire Wire Line
+	8240 2090 8330 2090
+Text GLabel 8080 2630 0    50   Input ~ 0
+R1
+Wire Wire Line
+	8240 2520 8240 2630
+Wire Wire Line
+	8240 2630 8080 2630
+Wire Wire Line
+	8930 1890 8970 1890
+Wire Wire Line
+	8970 1890 8970 1030
+$Comp
+L Transistor_BJT:BC547 Q?
+U 1 1 633FC050
+P 9380 2090
+F 0 "Q?" H 9571 2136 50  0000 L CNN
+F 1 "BC547" H 9571 2045 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 9580 2015 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 9380 2090 50  0001 L CNN
+	1    9380 2090
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 633FD5DB
+P 9060 2090
+F 0 "R?" V 9240 2040 50  0000 L CNN
+F 1 "1K" V 9150 2030 50  0000 L CNN
+F 2 "" H 9060 2090 50  0001 C CNN
+F 3 "~" H 9060 2090 50  0001 C CNN
+	1    9060 2090
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9160 2090 9180 2090
+Wire Wire Line
+	8930 2090 8960 2090
+Wire Wire Line
+	9480 1680 9480 1760
+$Comp
+L power:GND #PWR?
+U 1 1 6340CDCB
+P 9480 2490
+F 0 "#PWR?" H 9480 2240 50  0001 C CNN
+F 1 "GND" H 9485 2317 50  0000 C CNN
+F 2 "" H 9480 2490 50  0001 C CNN
+F 3 "" H 9480 2490 50  0001 C CNN
+	1    9480 2490
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9480 2490 9480 2290
+Wire Wire Line
+	9480 1030 9480 1080
+Wire Wire Line
+	8970 1030 9100 1030
+Wire Wire Line
+	9100 1260 9100 1030
+Connection ~ 9100 1030
+Wire Wire Line
+	9100 1030 9480 1030
+Wire Wire Line
+	9100 1560 9100 1760
+Wire Wire Line
+	9100 1760 9480 1760
+Connection ~ 9480 1760
+Wire Wire Line
+	9480 1760 9480 1890
+Wire Wire Line
+	9780 1680 10290 1680
+Wire Wire Line
+	10290 1680 10290 1340
+Wire Wire Line
+	10290 1340 10430 1340
+Wire Wire Line
+	9880 1080 9880 1020
+Wire Wire Line
+	9880 1020 10290 1020
+Wire Wire Line
+	10290 1020 10290 1240
+Wire Wire Line
+	10290 1240 10430 1240
+Wire Wire Line
+	9680 930  10130 930 
+Wire Wire Line
+	10130 930  10130 1440
+Wire Wire Line
+	10130 1440 10430 1440
+Wire Wire Line
+	9680 930  9680 1080
+$Comp
+L power:+5V #PWR?
+U 1 1 63434484
+P 8240 980
+F 0 "#PWR?" H 8240 830 50  0001 C CNN
+F 1 "+5V" H 8255 1153 50  0000 C CNN
+F 2 "" H 8240 980 50  0001 C CNN
+F 3 "" H 8240 980 50  0001 C CNN
+	1    8240 980 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 6343AC5E
+P 8970 970
+F 0 "#PWR?" H 8970 820 50  0001 C CNN
+F 1 "+5V" H 8985 1143 50  0000 C CNN
+F 2 "" H 8970 970 50  0001 C CNN
+F 3 "" H 8970 970 50  0001 C CNN
+	1    8970 970 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8240 980  8240 1410
+Wire Wire Line
+	8970 970  8970 1030
+Connection ~ 8970 1030
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 63468B6F
+P 14750 1320
+F 0 "J?" H 14830 1362 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" H 14830 1271 50  0000 L CNN
+F 2 "" H 14750 1320 50  0001 C CNN
+F 3 "~" H 14750 1320 50  0001 C CNN
+	1    14750 1320
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Power-Relays-Over-2-Amps:G5LE-14_DC5 RLY?
+U 1 1 63468B7E
+P 13800 1360
+F 0 "RLY?" H 14000 1000 50  0000 L CNN
+F 1 "G5LE-14_DC5" H 13990 910 50  0000 L CNN
+F 2 "digikey-footprints:Relay_THT_G5LE-14" H 14000 1560 50  0001 L CNN
+F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 14000 1660 60  0001 L CNN
+F 4 "Z1011-ND" H 14000 1760 60  0001 L CNN "Digi-Key_PN"
+F 5 "G5LE-14 DC5" H 14000 1860 60  0001 L CNN "MPN"
+F 6 "Relays" H 14000 1960 60  0001 L CNN "Category"
+F 7 "Power Relays, Over 2 Amps" H 14000 2060 60  0001 L CNN "Family"
+F 8 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 14000 2160 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/omron-electronics-inc-emc-div/G5LE-14-DC5/Z1011-ND/280371" H 14000 2260 60  0001 L CNN "DK_Detail_Page"
+F 10 "RELAY GEN PURPOSE SPDT 10A 5V" H 14000 2360 60  0001 L CNN "Description"
+F 11 "Omron Electronics Inc-EMC Div" H 14000 2460 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 14000 2560 60  0001 L CNN "Status"
+	1    13800 1360
+	1    0    0    -1  
+$EndComp
+$Comp
+L automata:1N4001 D?
+U 1 1 63468B84
+P 13220 1390
+F 0 "D?" V 13390 1410 50  0000 L CNN
+F 1 "1N4001" V 13480 1400 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 13220 1215 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 13220 1390 50  0001 C CNN
+	1    13220 1390
+	0    1    1    0   
+$EndComp
+$Comp
+L Isolator:EL817 U?
+U 1 1 63468B8A
+P 12750 1970
+F 0 "U?" H 12750 2295 50  0000 C CNN
+F 1 "EL817" H 12750 2204 50  0000 C CNN
+F 2 "Package_DIP:DIP-4_W7.62mm" H 12550 1770 50  0001 L CIN
+F 3 "http://www.everlight.com/file/ProductFile/EL817.pdf" H 12750 1970 50  0001 L CNN
+	1    12750 1970
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 63468B90
+P 12360 2350
+F 0 "D?" H 12400 2470 50  0000 C CNN
+F 1 "LED" H 12390 2560 50  0000 C CNN
+F 2 "" H 12360 2350 50  0001 C CNN
+F 3 "~" H 12360 2350 50  0001 C CNN
+	1    12360 2350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 63468B96
+P 12360 1490
+F 0 "R?" V 12540 1440 50  0000 L CNN
+F 1 "1K" V 12450 1430 50  0000 L CNN
+F 2 "" H 12360 1490 50  0001 C CNN
+F 3 "~" H 12360 1490 50  0001 C CNN
+	1    12360 1490
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12360 1590 12360 1870
+Wire Wire Line
+	12360 1870 12450 1870
+Wire Wire Line
+	12360 2200 12360 2070
+Wire Wire Line
+	12360 2070 12450 2070
+Text GLabel 12200 2610 0    50   Input ~ 0
+R2
+Wire Wire Line
+	12360 2500 12360 2610
+Wire Wire Line
+	12360 2610 12200 2610
+Wire Wire Line
+	13050 1870 13090 1870
+Wire Wire Line
+	13090 1870 13090 1010
+$Comp
+L Transistor_BJT:BC547 Q?
+U 1 1 63468BA5
+P 13500 2070
+F 0 "Q?" H 13691 2116 50  0000 L CNN
+F 1 "BC547" H 13691 2025 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 13700 1995 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 13500 2070 50  0001 L CNN
+	1    13500 2070
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 63468BAB
+P 13180 2070
+F 0 "R?" V 13360 2020 50  0000 L CNN
+F 1 "1K" V 13270 2010 50  0000 L CNN
+F 2 "" H 13180 2070 50  0001 C CNN
+F 3 "~" H 13180 2070 50  0001 C CNN
+	1    13180 2070
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	13280 2070 13300 2070
+Wire Wire Line
+	13050 2070 13080 2070
+Wire Wire Line
+	13600 1660 13600 1740
+$Comp
+L power:GND #PWR?
+U 1 1 63468BB4
+P 13600 2470
+F 0 "#PWR?" H 13600 2220 50  0001 C CNN
+F 1 "GND" H 13605 2297 50  0000 C CNN
+F 2 "" H 13600 2470 50  0001 C CNN
+F 3 "" H 13600 2470 50  0001 C CNN
+	1    13600 2470
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13600 2470 13600 2270
+Wire Wire Line
+	13600 1010 13600 1060
+Wire Wire Line
+	13090 1010 13220 1010
+Wire Wire Line
+	13220 1240 13220 1010
+Connection ~ 13220 1010
+Wire Wire Line
+	13220 1010 13600 1010
+Wire Wire Line
+	13220 1540 13220 1740
+Wire Wire Line
+	13220 1740 13600 1740
+Connection ~ 13600 1740
+Wire Wire Line
+	13600 1740 13600 1870
+Wire Wire Line
+	13900 1660 14410 1660
+Wire Wire Line
+	14410 1660 14410 1320
+Wire Wire Line
+	14410 1320 14550 1320
+Wire Wire Line
+	14000 1060 14000 1000
+Wire Wire Line
+	14000 1000 14410 1000
+Wire Wire Line
+	14410 1000 14410 1220
+Wire Wire Line
+	14410 1220 14550 1220
+Wire Wire Line
+	13800 910  14250 910 
+Wire Wire Line
+	14250 910  14250 1420
+Wire Wire Line
+	14250 1420 14550 1420
+Wire Wire Line
+	13800 910  13800 1060
+$Comp
+L power:+5V #PWR?
+U 1 1 63468BCF
+P 12360 960
+F 0 "#PWR?" H 12360 810 50  0001 C CNN
+F 1 "+5V" H 12375 1133 50  0000 C CNN
+F 2 "" H 12360 960 50  0001 C CNN
+F 3 "" H 12360 960 50  0001 C CNN
+	1    12360 960 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 63468BD5
+P 13090 950
+F 0 "#PWR?" H 13090 800 50  0001 C CNN
+F 1 "+5V" H 13105 1123 50  0000 C CNN
+F 2 "" H 13090 950 50  0001 C CNN
+F 3 "" H 13090 950 50  0001 C CNN
+	1    13090 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12360 960  12360 1390
+Wire Wire Line
+	13090 950  13090 1010
+Connection ~ 13090 1010
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 63482B03
+P 10600 5540
+F 0 "J?" H 10680 5582 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" H 10680 5491 50  0000 L CNN
+F 2 "" H 10600 5540 50  0001 C CNN
+F 3 "~" H 10600 5540 50  0001 C CNN
+	1    10600 5540
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Power-Relays-Over-2-Amps:G5LE-14_DC5 RLY?
+U 1 1 63482B12
+P 9650 5580
+F 0 "RLY?" H 9850 5220 50  0000 L CNN
+F 1 "G5LE-14_DC5" H 9840 5130 50  0000 L CNN
+F 2 "digikey-footprints:Relay_THT_G5LE-14" H 9850 5780 50  0001 L CNN
+F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 9850 5880 60  0001 L CNN
+F 4 "Z1011-ND" H 9850 5980 60  0001 L CNN "Digi-Key_PN"
+F 5 "G5LE-14 DC5" H 9850 6080 60  0001 L CNN "MPN"
+F 6 "Relays" H 9850 6180 60  0001 L CNN "Category"
+F 7 "Power Relays, Over 2 Amps" H 9850 6280 60  0001 L CNN "Family"
+F 8 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 9850 6380 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/omron-electronics-inc-emc-div/G5LE-14-DC5/Z1011-ND/280371" H 9850 6480 60  0001 L CNN "DK_Detail_Page"
+F 10 "RELAY GEN PURPOSE SPDT 10A 5V" H 9850 6580 60  0001 L CNN "Description"
+F 11 "Omron Electronics Inc-EMC Div" H 9850 6680 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 9850 6780 60  0001 L CNN "Status"
+	1    9650 5580
+	1    0    0    -1  
+$EndComp
+$Comp
+L automata:1N4001 D?
+U 1 1 63482B18
+P 9070 5610
+F 0 "D?" V 9210 5640 50  0000 L CNN
+F 1 "1N4001" V 9320 5630 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 9070 5435 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 9070 5610 50  0001 C CNN
+	1    9070 5610
+	0    1    1    0   
+$EndComp
+$Comp
+L Isolator:EL817 U?
+U 1 1 63482B1E
+P 8600 6190
+F 0 "U?" H 8600 6515 50  0000 C CNN
+F 1 "EL817" H 8600 6424 50  0000 C CNN
+F 2 "Package_DIP:DIP-4_W7.62mm" H 8400 5990 50  0001 L CIN
+F 3 "http://www.everlight.com/file/ProductFile/EL817.pdf" H 8600 6190 50  0001 L CNN
+	1    8600 6190
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 63482B24
+P 8210 6570
+F 0 "D?" H 8250 6690 50  0000 C CNN
+F 1 "LED" H 8240 6780 50  0000 C CNN
+F 2 "" H 8210 6570 50  0001 C CNN
+F 3 "~" H 8210 6570 50  0001 C CNN
+	1    8210 6570
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 63482B2A
+P 8210 5710
+F 0 "R?" V 8390 5660 50  0000 L CNN
+F 1 "1K" V 8300 5650 50  0000 L CNN
+F 2 "" H 8210 5710 50  0001 C CNN
+F 3 "~" H 8210 5710 50  0001 C CNN
+	1    8210 5710
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8210 5810 8210 6090
+Wire Wire Line
+	8210 6090 8300 6090
+Wire Wire Line
+	8210 6420 8210 6290
+Wire Wire Line
+	8210 6290 8300 6290
+Text GLabel 8050 6830 0    50   Input ~ 0
+R5
+Wire Wire Line
+	8210 6720 8210 6830
+Wire Wire Line
+	8210 6830 8050 6830
+Wire Wire Line
+	8900 6090 8940 6090
+Wire Wire Line
+	8940 6090 8940 5230
+$Comp
+L Transistor_BJT:BC547 Q?
+U 1 1 63482B39
+P 9350 6290
+F 0 "Q?" H 9541 6336 50  0000 L CNN
+F 1 "BC547" H 9541 6245 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 9550 6215 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 9350 6290 50  0001 L CNN
+	1    9350 6290
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 63482B3F
+P 9030 6290
+F 0 "R?" V 9210 6240 50  0000 L CNN
+F 1 "1K" V 9120 6230 50  0000 L CNN
+F 2 "" H 9030 6290 50  0001 C CNN
+F 3 "~" H 9030 6290 50  0001 C CNN
+	1    9030 6290
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9130 6290 9150 6290
+Wire Wire Line
+	8900 6290 8930 6290
+Wire Wire Line
+	9450 5880 9450 5960
+$Comp
+L power:GND #PWR?
+U 1 1 63482B48
+P 9450 6690
+F 0 "#PWR?" H 9450 6440 50  0001 C CNN
+F 1 "GND" H 9455 6517 50  0000 C CNN
+F 2 "" H 9450 6690 50  0001 C CNN
+F 3 "" H 9450 6690 50  0001 C CNN
+	1    9450 6690
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9450 6690 9450 6490
+Wire Wire Line
+	9450 5230 9450 5280
+Wire Wire Line
+	8940 5230 9070 5230
+Wire Wire Line
+	9070 5460 9070 5230
+Connection ~ 9070 5230
+Wire Wire Line
+	9070 5230 9450 5230
+Wire Wire Line
+	9070 5760 9070 5960
+Wire Wire Line
+	9070 5960 9450 5960
+Connection ~ 9450 5960
+Wire Wire Line
+	9450 5960 9450 6090
+Wire Wire Line
+	9750 5880 10260 5880
+Wire Wire Line
+	10260 5880 10260 5540
+Wire Wire Line
+	10260 5540 10400 5540
+Wire Wire Line
+	9850 5280 9850 5220
+Wire Wire Line
+	9850 5220 10260 5220
+Wire Wire Line
+	10260 5220 10260 5440
+Wire Wire Line
+	10260 5440 10400 5440
+Wire Wire Line
+	9650 5130 10100 5130
+Wire Wire Line
+	10100 5130 10100 5640
+Wire Wire Line
+	10100 5640 10400 5640
+Wire Wire Line
+	9650 5130 9650 5280
+$Comp
+L power:+5V #PWR?
+U 1 1 63482B63
+P 8210 5180
+F 0 "#PWR?" H 8210 5030 50  0001 C CNN
+F 1 "+5V" H 8225 5353 50  0000 C CNN
+F 2 "" H 8210 5180 50  0001 C CNN
+F 3 "" H 8210 5180 50  0001 C CNN
+	1    8210 5180
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 63482B69
+P 8940 5170
+F 0 "#PWR?" H 8940 5020 50  0001 C CNN
+F 1 "+5V" H 8955 5343 50  0000 C CNN
+F 2 "" H 8940 5170 50  0001 C CNN
+F 3 "" H 8940 5170 50  0001 C CNN
+	1    8940 5170
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8210 5180 8210 5610
+Wire Wire Line
+	8940 5170 8940 5230
+Connection ~ 8940 5230
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 63492B40
+P 14800 3420
+F 0 "J?" H 14880 3462 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" H 14880 3371 50  0000 L CNN
+F 2 "" H 14800 3420 50  0001 C CNN
+F 3 "~" H 14800 3420 50  0001 C CNN
+	1    14800 3420
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12410 4710 12250 4710
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 634A7749
+P 10610 3390
+F 0 "J?" H 10690 3432 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" H 10690 3341 50  0000 L CNN
+F 2 "" H 10610 3390 50  0001 C CNN
+F 3 "~" H 10610 3390 50  0001 C CNN
+	1    10610 3390
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Power-Relays-Over-2-Amps:G5LE-14_DC5 RLY?
+U 1 1 634A7758
+P 9660 3430
+F 0 "RLY?" H 9860 3070 50  0000 L CNN
+F 1 "G5LE-14_DC5" H 9850 2980 50  0000 L CNN
+F 2 "digikey-footprints:Relay_THT_G5LE-14" H 9860 3630 50  0001 L CNN
+F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 9860 3730 60  0001 L CNN
+F 4 "Z1011-ND" H 9860 3830 60  0001 L CNN "Digi-Key_PN"
+F 5 "G5LE-14 DC5" H 9860 3930 60  0001 L CNN "MPN"
+F 6 "Relays" H 9860 4030 60  0001 L CNN "Category"
+F 7 "Power Relays, Over 2 Amps" H 9860 4130 60  0001 L CNN "Family"
+F 8 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 9860 4230 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/omron-electronics-inc-emc-div/G5LE-14-DC5/Z1011-ND/280371" H 9860 4330 60  0001 L CNN "DK_Detail_Page"
+F 10 "RELAY GEN PURPOSE SPDT 10A 5V" H 9860 4430 60  0001 L CNN "Description"
+F 11 "Omron Electronics Inc-EMC Div" H 9860 4530 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 9860 4630 60  0001 L CNN "Status"
+	1    9660 3430
+	1    0    0    -1  
+$EndComp
+$Comp
+L automata:1N4001 D?
+U 1 1 634A775E
+P 9080 3460
+F 0 "D?" V 9240 3480 50  0000 L CNN
+F 1 "1N4001" V 9330 3470 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 9080 3285 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 9080 3460 50  0001 C CNN
+	1    9080 3460
+	0    1    1    0   
+$EndComp
+$Comp
+L Isolator:EL817 U?
+U 1 1 634A7764
+P 8610 4040
+F 0 "U?" H 8610 4365 50  0000 C CNN
+F 1 "EL817" H 8610 4274 50  0000 C CNN
+F 2 "Package_DIP:DIP-4_W7.62mm" H 8410 3840 50  0001 L CIN
+F 3 "http://www.everlight.com/file/ProductFile/EL817.pdf" H 8610 4040 50  0001 L CNN
+	1    8610 4040
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 634A776A
+P 8220 4420
+F 0 "D?" H 8260 4540 50  0000 C CNN
+F 1 "LED" H 8250 4630 50  0000 C CNN
+F 2 "" H 8220 4420 50  0001 C CNN
+F 3 "~" H 8220 4420 50  0001 C CNN
+	1    8220 4420
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 634A7770
+P 8220 3560
+F 0 "R?" V 8400 3510 50  0000 L CNN
+F 1 "1K" V 8310 3500 50  0000 L CNN
+F 2 "" H 8220 3560 50  0001 C CNN
+F 3 "~" H 8220 3560 50  0001 C CNN
+	1    8220 3560
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8220 3660 8220 3940
+Wire Wire Line
+	8220 3940 8310 3940
+Wire Wire Line
+	8220 4270 8220 4140
+Wire Wire Line
+	8220 4140 8310 4140
+Text GLabel 8060 4680 0    50   Input ~ 0
+R3
+Wire Wire Line
+	8220 4570 8220 4680
+Wire Wire Line
+	8220 4680 8060 4680
+Wire Wire Line
+	8910 3940 8950 3940
+Wire Wire Line
+	8950 3940 8950 3080
+$Comp
+L Transistor_BJT:BC547 Q?
+U 1 1 634A777F
+P 9360 4140
+F 0 "Q?" H 9551 4186 50  0000 L CNN
+F 1 "BC547" H 9551 4095 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 9560 4065 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 9360 4140 50  0001 L CNN
+	1    9360 4140
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 634A7785
+P 9040 4140
+F 0 "R?" V 9220 4090 50  0000 L CNN
+F 1 "1K" V 9130 4080 50  0000 L CNN
+F 2 "" H 9040 4140 50  0001 C CNN
+F 3 "~" H 9040 4140 50  0001 C CNN
+	1    9040 4140
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9140 4140 9160 4140
+Wire Wire Line
+	8910 4140 8940 4140
+Wire Wire Line
+	9460 3730 9460 3810
+$Comp
+L power:GND #PWR?
+U 1 1 634A778E
+P 9460 4540
+F 0 "#PWR?" H 9460 4290 50  0001 C CNN
+F 1 "GND" H 9465 4367 50  0000 C CNN
+F 2 "" H 9460 4540 50  0001 C CNN
+F 3 "" H 9460 4540 50  0001 C CNN
+	1    9460 4540
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9460 4540 9460 4340
+Wire Wire Line
+	9460 3080 9460 3130
+Wire Wire Line
+	8950 3080 9080 3080
+Wire Wire Line
+	9080 3310 9080 3080
+Connection ~ 9080 3080
+Wire Wire Line
+	9080 3080 9460 3080
+Wire Wire Line
+	9080 3610 9080 3810
+Wire Wire Line
+	9080 3810 9460 3810
+Connection ~ 9460 3810
+Wire Wire Line
+	9460 3810 9460 3940
+Wire Wire Line
+	9760 3730 10270 3730
+Wire Wire Line
+	10270 3730 10270 3390
+Wire Wire Line
+	10270 3390 10410 3390
+Wire Wire Line
+	9860 3130 9860 3070
+Wire Wire Line
+	9860 3070 10270 3070
+Wire Wire Line
+	10270 3070 10270 3290
+Wire Wire Line
+	10270 3290 10410 3290
+Wire Wire Line
+	9660 2980 10110 2980
+Wire Wire Line
+	10110 2980 10110 3490
+Wire Wire Line
+	10110 3490 10410 3490
+Wire Wire Line
+	9660 2980 9660 3130
+$Comp
+L power:+5V #PWR?
+U 1 1 634A77A9
+P 8220 3030
+F 0 "#PWR?" H 8220 2880 50  0001 C CNN
+F 1 "+5V" H 8235 3203 50  0000 C CNN
+F 2 "" H 8220 3030 50  0001 C CNN
+F 3 "" H 8220 3030 50  0001 C CNN
+	1    8220 3030
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 634A77AF
+P 8950 3020
+F 0 "#PWR?" H 8950 2870 50  0001 C CNN
+F 1 "+5V" H 8965 3193 50  0000 C CNN
+F 2 "" H 8950 3020 50  0001 C CNN
+F 3 "" H 8950 3020 50  0001 C CNN
+	1    8950 3020
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8220 3030 8220 3460
+Wire Wire Line
+	8950 3020 8950 3080
+Connection ~ 8950 3080
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 634BEFCA
+P 14790 5560
+F 0 "J?" H 14870 5602 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" H 14870 5511 50  0000 L CNN
+F 2 "" H 14790 5560 50  0001 C CNN
+F 3 "~" H 14790 5560 50  0001 C CNN
+	1    14790 5560
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Power-Relays-Over-2-Amps:G5LE-14_DC5 RLY?
+U 1 1 634BEFD9
+P 13840 5600
+F 0 "RLY?" H 14040 5240 50  0000 L CNN
+F 1 "G5LE-14_DC5" H 14030 5150 50  0000 L CNN
+F 2 "digikey-footprints:Relay_THT_G5LE-14" H 14040 5800 50  0001 L CNN
+F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 14040 5900 60  0001 L CNN
+F 4 "Z1011-ND" H 14040 6000 60  0001 L CNN "Digi-Key_PN"
+F 5 "G5LE-14 DC5" H 14040 6100 60  0001 L CNN "MPN"
+F 6 "Relays" H 14040 6200 60  0001 L CNN "Category"
+F 7 "Power Relays, Over 2 Amps" H 14040 6300 60  0001 L CNN "Family"
+F 8 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 14040 6400 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/omron-electronics-inc-emc-div/G5LE-14-DC5/Z1011-ND/280371" H 14040 6500 60  0001 L CNN "DK_Detail_Page"
+F 10 "RELAY GEN PURPOSE SPDT 10A 5V" H 14040 6600 60  0001 L CNN "Description"
+F 11 "Omron Electronics Inc-EMC Div" H 14040 6700 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 14040 6800 60  0001 L CNN "Status"
+	1    13840 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L automata:1N4001 D?
+U 1 1 634BEFDF
+P 13260 5630
+F 0 "D?" V 13430 5650 50  0000 L CNN
+F 1 "1N4001" V 13510 5640 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 13260 5455 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 13260 5630 50  0001 C CNN
+	1    13260 5630
+	0    1    1    0   
+$EndComp
+$Comp
+L Isolator:EL817 U?
+U 1 1 634BEFE5
+P 12790 6210
+F 0 "U?" H 12790 6535 50  0000 C CNN
+F 1 "EL817" H 12790 6444 50  0000 C CNN
+F 2 "Package_DIP:DIP-4_W7.62mm" H 12590 6010 50  0001 L CIN
+F 3 "http://www.everlight.com/file/ProductFile/EL817.pdf" H 12790 6210 50  0001 L CNN
+	1    12790 6210
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 634BEFEB
+P 12400 6590
+F 0 "D?" H 12440 6710 50  0000 C CNN
+F 1 "LED" H 12430 6800 50  0000 C CNN
+F 2 "" H 12400 6590 50  0001 C CNN
+F 3 "~" H 12400 6590 50  0001 C CNN
+	1    12400 6590
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 634BEFF1
+P 12400 5730
+F 0 "R?" V 12580 5680 50  0000 L CNN
+F 1 "1K" V 12490 5670 50  0000 L CNN
+F 2 "" H 12400 5730 50  0001 C CNN
+F 3 "~" H 12400 5730 50  0001 C CNN
+	1    12400 5730
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12400 5830 12400 6110
+Wire Wire Line
+	12400 6110 12490 6110
+Wire Wire Line
+	12400 6440 12400 6310
+Wire Wire Line
+	12400 6310 12490 6310
+Text GLabel 12240 6850 0    50   Input ~ 0
+R6
+Wire Wire Line
+	12400 6740 12400 6850
+Wire Wire Line
+	12400 6850 12240 6850
+Wire Wire Line
+	13090 6110 13130 6110
+Wire Wire Line
+	13130 6110 13130 5250
+$Comp
+L Transistor_BJT:BC547 Q?
+U 1 1 634BF000
+P 13540 6310
+F 0 "Q?" H 13731 6356 50  0000 L CNN
+F 1 "BC547" H 13731 6265 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 13740 6235 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 13540 6310 50  0001 L CNN
+	1    13540 6310
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 634BF006
+P 13220 6310
+F 0 "R?" V 13400 6260 50  0000 L CNN
+F 1 "1K" V 13310 6250 50  0000 L CNN
+F 2 "" H 13220 6310 50  0001 C CNN
+F 3 "~" H 13220 6310 50  0001 C CNN
+	1    13220 6310
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	13320 6310 13340 6310
+Wire Wire Line
+	13090 6310 13120 6310
+Wire Wire Line
+	13640 5900 13640 5980
+$Comp
+L power:GND #PWR?
+U 1 1 634BF00F
+P 13640 6710
+F 0 "#PWR?" H 13640 6460 50  0001 C CNN
+F 1 "GND" H 13645 6537 50  0000 C CNN
+F 2 "" H 13640 6710 50  0001 C CNN
+F 3 "" H 13640 6710 50  0001 C CNN
+	1    13640 6710
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13640 6710 13640 6510
+Wire Wire Line
+	13640 5250 13640 5300
+Wire Wire Line
+	13130 5250 13260 5250
+Wire Wire Line
+	13260 5480 13260 5250
+Connection ~ 13260 5250
+Wire Wire Line
+	13260 5250 13640 5250
+Wire Wire Line
+	13260 5780 13260 5980
+Wire Wire Line
+	13260 5980 13640 5980
+Connection ~ 13640 5980
+Wire Wire Line
+	13640 5980 13640 6110
+Wire Wire Line
+	13940 5900 14450 5900
+Wire Wire Line
+	14450 5900 14450 5560
+Wire Wire Line
+	14450 5560 14590 5560
+Wire Wire Line
+	14040 5300 14040 5240
+Wire Wire Line
+	14040 5240 14450 5240
+Wire Wire Line
+	14450 5240 14450 5460
+Wire Wire Line
+	14450 5460 14590 5460
+Wire Wire Line
+	13840 5150 14290 5150
+Wire Wire Line
+	14290 5150 14290 5660
+Wire Wire Line
+	14290 5660 14590 5660
+Wire Wire Line
+	13840 5150 13840 5300
+$Comp
+L power:+5V #PWR?
+U 1 1 634BF02A
+P 12400 5200
+F 0 "#PWR?" H 12400 5050 50  0001 C CNN
+F 1 "+5V" H 12415 5373 50  0000 C CNN
+F 2 "" H 12400 5200 50  0001 C CNN
+F 3 "" H 12400 5200 50  0001 C CNN
+	1    12400 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 634BF030
+P 13130 5190
+F 0 "#PWR?" H 13130 5040 50  0001 C CNN
+F 1 "+5V" H 13145 5363 50  0000 C CNN
+F 2 "" H 13130 5190 50  0001 C CNN
+F 3 "" H 13130 5190 50  0001 C CNN
+	1    13130 5190
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12400 5200 12400 5630
+Wire Wire Line
+	13130 5190 13130 5250
+Connection ~ 13130 5250
+Connection ~ 13140 3110
+Wire Wire Line
+	13140 3050 13140 3110
+Wire Wire Line
+	12410 3060 12410 3490
+$Comp
+L power:+5V #PWR?
+U 1 1 63492BA6
+P 13140 3050
+F 0 "#PWR?" H 13140 2900 50  0001 C CNN
+F 1 "+5V" H 13155 3223 50  0000 C CNN
+F 2 "" H 13140 3050 50  0001 C CNN
+F 3 "" H 13140 3050 50  0001 C CNN
+	1    13140 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 63492BA0
+P 12410 3060
+F 0 "#PWR?" H 12410 2910 50  0001 C CNN
+F 1 "+5V" H 12425 3233 50  0000 C CNN
+F 2 "" H 12410 3060 50  0001 C CNN
+F 3 "" H 12410 3060 50  0001 C CNN
+	1    12410 3060
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13850 3010 13850 3160
+Wire Wire Line
+	14300 3520 14600 3520
+Wire Wire Line
+	14300 3010 14300 3520
+Wire Wire Line
+	13850 3010 14300 3010
+Wire Wire Line
+	14460 3320 14600 3320
+Wire Wire Line
+	14460 3100 14460 3320
+Wire Wire Line
+	14050 3100 14460 3100
+Wire Wire Line
+	14050 3160 14050 3100
+Wire Wire Line
+	14460 3420 14600 3420
+Wire Wire Line
+	14460 3760 14460 3420
+Wire Wire Line
+	13950 3760 14460 3760
+Wire Wire Line
+	13650 3840 13650 3970
+Connection ~ 13650 3840
+Wire Wire Line
+	13270 3840 13650 3840
+Wire Wire Line
+	13270 3640 13270 3840
+Wire Wire Line
+	13270 3110 13650 3110
+Connection ~ 13270 3110
+Wire Wire Line
+	13270 3340 13270 3110
+Wire Wire Line
+	13140 3110 13270 3110
+Wire Wire Line
+	13650 3110 13650 3160
+Wire Wire Line
+	13650 4570 13650 4370
+$Comp
+L power:GND #PWR?
+U 1 1 63492B85
+P 13650 4570
+F 0 "#PWR?" H 13650 4320 50  0001 C CNN
+F 1 "GND" H 13655 4397 50  0000 C CNN
+F 2 "" H 13650 4570 50  0001 C CNN
+F 3 "" H 13650 4570 50  0001 C CNN
+	1    13650 4570
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13650 3760 13650 3840
+Wire Wire Line
+	13100 4170 13130 4170
+Wire Wire Line
+	13330 4170 13350 4170
+$Comp
+L Device:R_Small R?
+U 1 1 63492B7C
+P 13230 4170
+F 0 "R?" V 13410 4120 50  0000 L CNN
+F 1 "1K" V 13320 4110 50  0000 L CNN
+F 2 "" H 13230 4170 50  0001 C CNN
+F 3 "~" H 13230 4170 50  0001 C CNN
+	1    13230 4170
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Transistor_BJT:BC547 Q?
+U 1 1 63492B76
+P 13550 4170
+F 0 "Q?" H 13741 4216 50  0000 L CNN
+F 1 "BC547" H 13741 4125 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 13750 4095 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" H 13550 4170 50  0001 L CNN
+	1    13550 4170
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13140 3970 13140 3110
+Wire Wire Line
+	13100 3970 13140 3970
+Wire Wire Line
+	12410 4600 12410 4710
+Wire Wire Line
+	12410 4170 12500 4170
+Wire Wire Line
+	12410 4300 12410 4170
+Wire Wire Line
+	12410 3970 12500 3970
+Wire Wire Line
+	12410 3690 12410 3970
+$Comp
+L Device:R_Small R?
+U 1 1 63492B67
+P 12410 3590
+F 0 "R?" V 12590 3540 50  0000 L CNN
+F 1 "1K" V 12500 3530 50  0000 L CNN
+F 2 "" H 12410 3590 50  0001 C CNN
+F 3 "~" H 12410 3590 50  0001 C CNN
+	1    12410 3590
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 63492B61
+P 12410 4450
+F 0 "D?" H 12450 4570 50  0000 C CNN
+F 1 "LED" H 12440 4660 50  0000 C CNN
+F 2 "" H 12410 4450 50  0001 C CNN
+F 3 "~" H 12410 4450 50  0001 C CNN
+	1    12410 4450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Isolator:EL817 U?
+U 1 1 63492B5B
+P 12800 4070
+F 0 "U?" H 12800 4395 50  0000 C CNN
+F 1 "EL817" H 12800 4304 50  0000 C CNN
+F 2 "Package_DIP:DIP-4_W7.62mm" H 12600 3870 50  0001 L CIN
+F 3 "http://www.everlight.com/file/ProductFile/EL817.pdf" H 12800 4070 50  0001 L CNN
+	1    12800 4070
+	1    0    0    -1  
+$EndComp
+$Comp
+L automata:1N4001 D?
+U 1 1 63492B55
+P 13270 3490
+F 0 "D?" V 13430 3520 50  0000 L CNN
+F 1 "1N4001" V 13530 3500 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 13270 3315 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 13270 3490 50  0001 C CNN
+	1    13270 3490
+	0    1    1    0   
+$EndComp
+$Comp
+L dk_Power-Relays-Over-2-Amps:G5LE-14_DC5 RLY?
+U 1 1 63492B4F
+P 13850 3460
+F 0 "RLY?" H 14050 3100 50  0000 L CNN
+F 1 "G5LE-14_DC5" H 14040 3010 50  0000 L CNN
+F 2 "digikey-footprints:Relay_THT_G5LE-14" H 14050 3660 50  0001 L CNN
+F 3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 14050 3760 60  0001 L CNN
+F 4 "Z1011-ND" H 14050 3860 60  0001 L CNN "Digi-Key_PN"
+F 5 "G5LE-14 DC5" H 14050 3960 60  0001 L CNN "MPN"
+F 6 "Relays" H 14050 4060 60  0001 L CNN "Category"
+F 7 "Power Relays, Over 2 Amps" H 14050 4160 60  0001 L CNN "Family"
+F 8 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf" H 14050 4260 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/omron-electronics-inc-emc-div/G5LE-14-DC5/Z1011-ND/280371" H 14050 4360 60  0001 L CNN "DK_Detail_Page"
+F 10 "RELAY GEN PURPOSE SPDT 10A 5V" H 14050 4460 60  0001 L CNN "Description"
+F 11 "Omron Electronics Inc-EMC Div" H 14050 4560 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 14050 4660 60  0001 L CNN "Status"
+	1    13850 3460
+	1    0    0    -1  
+$EndComp
+Text GLabel 12250 4710 0    50   Input ~ 0
+R4
+Text GLabel 5460 3160 2    50   Input ~ 0
+R1
+Wire Wire Line
+	5370 3160 5460 3160
+Text GLabel 5470 3260 2    50   Input ~ 0
+R2
+Wire Wire Line
+	5370 3260 5470 3260
+Text GLabel 5470 3360 2    50   Input ~ 0
+R3
+Wire Wire Line
+	5470 3360 5370 3360
+Text GLabel 5470 3460 2    50   Input ~ 0
+R4
+Wire Wire Line
+	5370 3460 5470 3460
+Text GLabel 5470 3560 2    50   Input ~ 0
+R5
+Wire Wire Line
+	5370 3560 5470 3560
+Text GLabel 5470 3660 2    50   Input ~ 0
+R6
+Wire Wire Line
+	5370 3660 5470 3660
+Text Notes 5190 4580 2    79   ~ 0
+Microcontroller
+Text Notes 2690 3080 2    79   ~ 0
+Decoupling cap
+Text Notes 2380 1820 2    79   ~ 0
+Reset Switch
+Text Notes 2160 4690 2    79   ~ 0
+BOOT
+Text Notes 4950 6630 2    79   ~ 0
+nRF24L01
+Text Notes 11570 7450 2    79   ~ 0
+Relay Section
+$Comp
+L automata:Conn_02x04 J?
+U 1 1 63384D07
+P 4610 5930
+F 0 "J?" H 4500 5660 50  0000 C CNN
+F 1 "nRF24L01 module" H 4720 5590 50  0000 C CNN
+F 2 "" H 4610 5930 50  0001 C CNN
+F 3 "~" H 4610 5930 50  0001 C CNN
+	1    4610 5930
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Switching:LM2596T-12 U?
+U 1 1 633C4F68
+P 2560 8100
+F 0 "U?" H 2560 8467 50  0000 C CNN
+F 1 "LM2596T-12" H 2560 8376 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-5_P3.4x3.7mm_StaggerOdd_Lead3.8mm_Vertical" H 2610 7850 50  0001 L CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 2560 8100 50  0001 C CNN
+	1    2560 8100
+	1    0    0    -1  
+$EndComp
+$Comp
+L automata:1N4001 D?
+U 1 1 633C5EFF
+P 1360 8000
+F 0 "D?" H 1360 7784 50  0000 C CNN
+F 1 "1N4001" H 1360 7875 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 1360 7825 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 1360 8000 50  0001 C CNN
+	1    1360 8000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 633C7BB7
+P 830 8100
+F 0 "J?" V 830 7840 50  0000 L CNN
+F 1 "power supply" V 940 7870 50  0000 L CNN
+F 2 "" H 830 8100 50  0001 C CNN
+F 3 "~" H 830 8100 50  0001 C CNN
+	1    830  8100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:CP1_Small C?
+U 1 1 633CB2AD
+P 1630 8210
+F 0 "C?" H 1480 8310 50  0000 L CNN
+F 1 "220uF/50V" H 1190 8140 50  0000 L CNN
+F 2 "" H 1630 8210 50  0001 C CNN
+F 3 "~" H 1630 8210 50  0001 C CNN
+	1    1630 8210
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Diodes-Rectifiers-Single:SS14 D?
+U 1 1 633CDD8C
+P 3370 8330
+F 0 "D?" V 3374 8418 50  0000 L CNN
+F 1 "SS14" V 3465 8418 50  0000 L CNN
+F 2 "digikey-footprints:DO-214AC" H 3570 8530 60  0001 L CNN
+F 3 "https://www.onsemi.com/pub/Collateral/SS19-D.PDF" H 3570 8630 60  0001 L CNN
+F 4 "SS14CT-ND" H 3570 8730 60  0001 L CNN "Digi-Key_PN"
+F 5 "SS14" H 3570 8830 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 3570 8930 60  0001 L CNN "Category"
+F 7 "Diodes - Rectifiers - Single" H 3570 9030 60  0001 L CNN "Family"
+F 8 "https://www.onsemi.com/pub/Collateral/SS19-D.PDF" H 3570 9130 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/SS14/SS14CT-ND/965729" H 3570 9230 60  0001 L CNN "DK_Detail_Page"
+F 10 "DIODE SCHOTTKY 40V 1A SMA" H 3570 9330 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 3570 9430 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3570 9530 60  0001 L CNN "Status"
+	1    3370 8330
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 633D0B11
+P 3670 8200
+F 0 "L?" V 3800 8260 50  0000 C CNN
+F 1 "33uH" V 3730 8200 50  0000 C CNN
+F 2 "" H 3670 8200 50  0001 C CNN
+F 3 "~" H 3670 8200 50  0001 C CNN
+	1    3670 8200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:CP1_Small C?
+U 1 1 63413634
+P 3910 8370
+F 0 "C?" H 3770 8080 50  0000 L CNN
+F 1 "220uF/50V" H 3700 7980 50  0000 L CNN
+F 2 "" H 3910 8370 50  0001 C CNN
+F 3 "~" H 3910 8370 50  0001 C CNN
+	1    3910 8370
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 63414343
+P 4180 8330
+F 0 "C?" H 4260 8410 50  0000 C CNN
+F 1 "100nF" H 4290 8490 50  0000 C CNN
+F 2 "" H 4180 8330 50  0001 C CNN
+F 3 "~" H 4180 8330 50  0001 C CNN
+	1    4180 8330
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 63415B00
+P 4470 7980
+F 0 "R?" H 4310 7920 50  0000 L CNN
+F 1 "1K" H 4300 8010 50  0000 L CNN
+F 2 "" H 4470 7980 50  0001 C CNN
+F 3 "~" H 4470 7980 50  0001 C CNN
+	1    4470 7980
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 634160A0
+P 4470 8300
+F 0 "D?" V 4550 8180 50  0000 C CNN
+F 1 "LED" V 4460 8160 50  0000 C CNN
+F 2 "" H 4470 8300 50  0001 C CNN
+F 3 "~" H 4470 8300 50  0001 C CNN
+	1    4470 8300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1030 8000 1210 8000
+Wire Wire Line
+	1510 8000 1630 8000
+$Comp
+L power:GND #PWR?
+U 1 1 6344560E
+P 2560 8680
+F 0 "#PWR?" H 2560 8430 50  0001 C CNN
+F 1 "GND" H 2565 8507 50  0000 C CNN
+F 2 "" H 2560 8680 50  0001 C CNN
+F 3 "" H 2560 8680 50  0001 C CNN
+	1    2560 8680
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1630 8110 1630 8000
+Connection ~ 1630 8000
+Wire Wire Line
+	1630 8000 1860 8000
+Wire Wire Line
+	1630 8310 1630 8520
+Connection ~ 1630 8520
+Wire Wire Line
+	1630 8520 1860 8520
+Wire Wire Line
+	1860 8110 1860 8000
+Connection ~ 1860 8000
+Wire Wire Line
+	1860 8000 2060 8000
+Wire Wire Line
+	1860 8310 1860 8520
+Connection ~ 1860 8520
+Wire Wire Line
+	1860 8520 2040 8520
+$Comp
+L Device:C_Small C?
+U 1 1 633C98C8
+P 1860 8210
+F 0 "C?" H 1800 8120 50  0000 C CNN
+F 1 "100nF" H 1740 8290 50  0000 C CNN
+F 2 "" H 1860 8210 50  0001 C CNN
+F 3 "~" H 1860 8210 50  0001 C CNN
+	1    1860 8210
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1150 8520 1150 8200
+Wire Wire Line
+	1150 8200 1030 8200
+Wire Wire Line
+	1150 8520 1630 8520
+Wire Wire Line
+	2060 8200 2040 8200
+Wire Wire Line
+	2040 8200 2040 8520
+Wire Wire Line
+	3060 8200 3370 8200
+Wire Wire Line
+	3820 8200 3910 8200
+Wire Wire Line
+	4180 8200 4180 8080
+Wire Wire Line
+	4180 8230 4180 8200
+Connection ~ 4180 8200
+$Comp
+L power:+12V #PWR?
+U 1 1 635655BA
+P 4180 7790
+F 0 "#PWR?" H 4180 7640 50  0001 C CNN
+F 1 "+12V" H 4195 7963 50  0000 C CNN
+F 2 "" H 4180 7790 50  0001 C CNN
+F 3 "" H 4180 7790 50  0001 C CNN
+	1    4180 7790
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4470 7880 4470 7820
+Wire Wire Line
+	4470 8150 4470 8080
+Wire Wire Line
+	2560 8400 2560 8520
+Wire Wire Line
+	2040 8520 2560 8520
+Connection ~ 2040 8520
+Connection ~ 2560 8520
+Wire Wire Line
+	2560 8520 2560 8600
+Wire Wire Line
+	4470 8600 4180 8600
+Wire Wire Line
+	4470 8450 4470 8600
+Connection ~ 2560 8600
+Wire Wire Line
+	2560 8600 2560 8680
+Wire Wire Line
+	3370 8230 3370 8200
+Connection ~ 3370 8200
+Wire Wire Line
+	3370 8200 3520 8200
+Wire Wire Line
+	3370 8530 3370 8600
+Connection ~ 3370 8600
+Wire Wire Line
+	3370 8600 2560 8600
+Wire Wire Line
+	3910 8270 3910 8200
+Connection ~ 3910 8200
+Wire Wire Line
+	3910 8200 4180 8200
+Wire Wire Line
+	3910 8470 3910 8600
+Connection ~ 3910 8600
+Wire Wire Line
+	3910 8600 3370 8600
+Wire Wire Line
+	4180 8430 4180 8600
+Connection ~ 4180 8600
+Wire Wire Line
+	4180 8600 3910 8600
+$Comp
+L Device:R_Small R?
+U 1 1 63414C26
+P 4180 7980
+F 0 "R?" H 4260 7970 50  0000 L CNN
+F 1 "0E" H 4260 8050 50  0000 L CNN
+F 2 "" H 4180 7980 50  0001 C CNN
+F 3 "~" H 4180 7980 50  0001 C CNN
+	1    4180 7980
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3060 8000 3910 8000
+Wire Wire Line
+	3910 8000 3910 8190
+$Comp
+L Regulator_Switching:LM2596T-5 U?
+U 1 1 633EDAAD
+P 2380 9610
+F 0 "U?" H 2380 9977 50  0000 C CNN
+F 1 "LM2596T-5" H 2380 9886 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-5_P3.4x3.7mm_StaggerOdd_Lead3.8mm_Vertical" H 2430 9360 50  0001 L CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 2380 9610 50  0001 C CNN
+	1    2380 9610
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1_Small C?
+U 1 1 633EEB46
+P 1470 9770
+F 0 "C?" H 1320 9870 50  0000 L CNN
+F 1 "220uF/50V" H 1030 9700 50  0000 L CNN
+F 2 "" H 1470 9770 50  0001 C CNN
+F 3 "~" H 1470 9770 50  0001 C CNN
+	1    1470 9770
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 633EFF0D
+P 1660 9770
+F 0 "C?" H 1600 9680 50  0000 C CNN
+F 1 "100nF" H 1540 9850 50  0000 C CNN
+F 2 "" H 1660 9770 50  0001 C CNN
+F 3 "~" H 1660 9770 50  0001 C CNN
+	1    1660 9770
+	-1   0    0    1   
+$EndComp
+$Comp
+L dk_Diodes-Rectifiers-Single:SS14 D?
+U 1 1 633F07FB
+P 3100 9850
+F 0 "D?" V 3104 9938 50  0000 L CNN
+F 1 "SS14" V 3195 9938 50  0000 L CNN
+F 2 "digikey-footprints:DO-214AC" H 3300 10050 60  0001 L CNN
+F 3 "https://www.onsemi.com/pub/Collateral/SS19-D.PDF" H 3300 10150 60  0001 L CNN
+F 4 "SS14CT-ND" H 3300 10250 60  0001 L CNN "Digi-Key_PN"
+F 5 "SS14" H 3300 10350 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 3300 10450 60  0001 L CNN "Category"
+F 7 "Diodes - Rectifiers - Single" H 3300 10550 60  0001 L CNN "Family"
+F 8 "https://www.onsemi.com/pub/Collateral/SS19-D.PDF" H 3300 10650 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/SS14/SS14CT-ND/965729" H 3300 10750 60  0001 L CNN "DK_Detail_Page"
+F 10 "DIODE SCHOTTKY 40V 1A SMA" H 3300 10850 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 3300 10950 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3300 11050 60  0001 L CNN "Status"
+	1    3100 9850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 633F1A34
+P 3460 9710
+F 0 "L?" V 3600 9770 50  0000 C CNN
+F 1 "33uH" V 3530 9710 50  0000 C CNN
+F 2 "" H 3460 9710 50  0001 C CNN
+F 3 "~" H 3460 9710 50  0001 C CNN
+	1    3460 9710
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:CP1_Small C?
+U 1 1 633F24F6
+P 3650 9890
+F 0 "C?" H 3510 9600 50  0000 L CNN
+F 1 "220uF/50V" H 3440 9500 50  0000 L CNN
+F 2 "" H 3650 9890 50  0001 C CNN
+F 3 "~" H 3650 9890 50  0001 C CNN
+	1    3650 9890
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 633F3260
+P 3900 9890
+F 0 "C?" H 3980 9970 50  0000 C CNN
+F 1 "100nF" H 4010 10050 50  0000 C CNN
+F 2 "" H 3900 9890 50  0001 C CNN
+F 3 "~" H 3900 9890 50  0001 C CNN
+	1    3900 9890
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 633F41B6
+P 3900 9460
+F 0 "R?" H 3980 9450 50  0000 L CNN
+F 1 "0E" H 3980 9530 50  0000 L CNN
+F 2 "" H 3900 9460 50  0001 C CNN
+F 3 "~" H 3900 9460 50  0001 C CNN
+	1    3900 9460
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 633F463C
+P 4140 9460
+F 0 "R?" H 3980 9400 50  0000 L CNN
+F 1 "1K" H 3970 9490 50  0000 L CNN
+F 2 "" H 4140 9460 50  0001 C CNN
+F 3 "~" H 4140 9460 50  0001 C CNN
+	1    4140 9460
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 633F4E10
+P 4140 9840
+F 0 "D?" V 4220 9720 50  0000 C CNN
+F 1 "LED" V 4130 9700 50  0000 C CNN
+F 2 "" H 4140 9840 50  0001 C CNN
+F 3 "~" H 4140 9840 50  0001 C CNN
+	1    4140 9840
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 633F549E
+P 800 9390
+F 0 "#PWR?" H 800 9240 50  0001 C CNN
+F 1 "+12V" H 815 9563 50  0000 C CNN
+F 2 "" H 800 9390 50  0001 C CNN
+F 3 "" H 800 9390 50  0001 C CNN
+	1    800  9390
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	800  9390 800  9510
+Wire Wire Line
+	800  9510 1470 9510
+$Comp
+L power:GND #PWR?
+U 1 1 6343892D
+P 2380 10250
+F 0 "#PWR?" H 2380 10000 50  0001 C CNN
+F 1 "GND" H 2385 10077 50  0000 C CNN
+F 2 "" H 2380 10250 50  0001 C CNN
+F 3 "" H 2380 10250 50  0001 C CNN
+	1    2380 10250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1470 9670 1470 9510
+Connection ~ 1470 9510
+Wire Wire Line
+	1470 9510 1660 9510
+Wire Wire Line
+	1660 9670 1660 9510
+Connection ~ 1660 9510
+Wire Wire Line
+	1660 9510 1880 9510
+Wire Wire Line
+	1470 9870 1470 10180
+Wire Wire Line
+	1470 10180 1660 10180
+Wire Wire Line
+	1660 9870 1660 10180
+Wire Wire Line
+	2880 9710 3100 9710
+Wire Wire Line
+	3610 9710 3650 9710
+Wire Wire Line
+	3900 9710 3900 9560
+$Comp
+L power:+5V #PWR?
+U 1 1 635955D4
+P 3900 9270
+F 0 "#PWR?" H 3900 9120 50  0001 C CNN
+F 1 "+5V" H 3915 9443 50  0000 C CNN
+F 2 "" H 3900 9270 50  0001 C CNN
+F 3 "" H 3900 9270 50  0001 C CNN
+	1    3900 9270
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4140 9360 4140 9300
+Wire Wire Line
+	4140 9560 4140 9690
+Wire Wire Line
+	4140 9990 4140 10100
+Connection ~ 2380 10100
+Wire Wire Line
+	2380 10100 2380 9910
+Wire Wire Line
+	2380 10100 2380 10180
+Wire Wire Line
+	1660 10180 2380 10180
+Connection ~ 1660 10180
+Connection ~ 2380 10180
+Wire Wire Line
+	2380 10180 2380 10250
+Wire Wire Line
+	3100 9750 3100 9710
+Connection ~ 3100 9710
+Wire Wire Line
+	3100 9710 3310 9710
+Wire Wire Line
+	3100 10050 3100 10100
+Connection ~ 3100 10100
+Wire Wire Line
+	3100 10100 2380 10100
+Wire Wire Line
+	3650 9790 3650 9710
+Connection ~ 3650 9710
+Wire Wire Line
+	3650 9710 3900 9710
+Wire Wire Line
+	3650 9990 3650 10100
+Connection ~ 3650 10100
+Wire Wire Line
+	3650 10100 3100 10100
+Wire Wire Line
+	3900 9790 3900 9710
+Connection ~ 3900 9710
+Wire Wire Line
+	4140 10100 3900 10100
+Wire Wire Line
+	3900 9990 3900 10100
+Connection ~ 3900 10100
+Wire Wire Line
+	3900 10100 3650 10100
+Wire Wire Line
+	2880 9510 3650 9510
+Wire Wire Line
+	3650 9510 3650 9710
+$Comp
+L Regulator_Linear:LM1117-3.3 U?
+U 1 1 637DB541
+P 6160 8530
+F 0 "U?" H 6160 8772 50  0000 C CNN
+F 1 "LM1117-3.3" H 6160 8681 50  0000 C CNN
+F 2 "" H 6160 8530 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm1117.pdf" H 6160 8530 50  0001 C CNN
+	1    6160 8530
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1_Small C?
+U 1 1 637DD510
+P 5550 8770
+F 0 "C?" H 5400 8870 50  0000 L CNN
+F 1 "220uF/50V" H 5110 8700 50  0000 L CNN
+F 2 "" H 5550 8770 50  0001 C CNN
+F 3 "~" H 5550 8770 50  0001 C CNN
+	1    5550 8770
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 637DE2D2
+P 5770 8770
+F 0 "C?" H 5710 8680 50  0000 C CNN
+F 1 "100nF" H 5650 8850 50  0000 C CNN
+F 2 "" H 5770 8770 50  0001 C CNN
+F 3 "~" H 5770 8770 50  0001 C CNN
+	1    5770 8770
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:CP1_Small C?
+U 1 1 637DEA52
+P 6610 8700
+F 0 "C?" H 6460 8800 50  0000 L CNN
+F 1 "220uF/50V" H 6170 8630 50  0000 L CNN
+F 2 "" H 6610 8700 50  0001 C CNN
+F 3 "~" H 6610 8700 50  0001 C CNN
+	1    6610 8700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 637DEFC4
+P 6930 8690
+F 0 "C?" H 7040 8620 50  0000 C CNN
+F 1 "100nF" H 7040 8770 50  0000 C CNN
+F 2 "" H 6930 8690 50  0001 C CNN
+F 3 "~" H 6930 8690 50  0001 C CNN
+	1    6930 8690
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 637DF344
+P 5290 8160
+F 0 "#PWR?" H 5290 8010 50  0001 C CNN
+F 1 "+5V" H 5305 8333 50  0000 C CNN
+F 2 "" H 5290 8160 50  0001 C CNN
+F 3 "" H 5290 8160 50  0001 C CNN
+	1    5290 8160
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5860 8530 5770 8530
+$Comp
+L power:GND #PWR?
+U 1 1 63809A0C
+P 6160 9000
+F 0 "#PWR?" H 6160 8750 50  0001 C CNN
+F 1 "GND" H 6165 8827 50  0000 C CNN
+F 2 "" H 6160 9000 50  0001 C CNN
+F 3 "" H 6160 9000 50  0001 C CNN
+	1    6160 9000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6160 8830 6160 8900
+Wire Wire Line
+	5550 8870 5550 8900
+Wire Wire Line
+	5550 8900 5770 8900
+Connection ~ 6160 8900
+Wire Wire Line
+	6160 8900 6160 8960
+Wire Wire Line
+	5770 8870 5770 8900
+Connection ~ 5770 8900
+Wire Wire Line
+	5770 8900 6160 8900
+Wire Wire Line
+	5770 8670 5770 8530
+Connection ~ 5770 8530
+Wire Wire Line
+	5770 8530 5550 8530
+Wire Wire Line
+	5550 8670 5550 8530
+Connection ~ 5550 8530
+Wire Wire Line
+	5550 8530 5290 8530
+$Comp
+L Device:R_Small R?
+U 1 1 638E0FE8
+P 6930 8320
+F 0 "R?" H 7010 8310 50  0000 L CNN
+F 1 "0E" H 7010 8390 50  0000 L CNN
+F 2 "" H 6930 8320 50  0001 C CNN
+F 3 "~" H 6930 8320 50  0001 C CNN
+	1    6930 8320
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 638E21BD
+P 7170 8460
+F 0 "R?" H 7010 8400 50  0000 L CNN
+F 1 "1K" H 7000 8490 50  0000 L CNN
+F 2 "" H 7170 8460 50  0001 C CNN
+F 3 "~" H 7170 8460 50  0001 C CNN
+	1    7170 8460
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 638E2EDA
+P 7170 8760
+F 0 "D?" V 7250 8640 50  0000 C CNN
+F 1 "LED" V 7160 8620 50  0000 C CNN
+F 2 "" H 7170 8760 50  0001 C CNN
+F 3 "~" H 7170 8760 50  0001 C CNN
+	1    7170 8760
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7170 8960 6930 8960
+Connection ~ 6160 8960
+Wire Wire Line
+	6160 8960 6160 9000
+Wire Wire Line
+	6460 8530 6610 8530
+Wire Wire Line
+	6610 8600 6610 8530
+Connection ~ 6610 8530
+Wire Wire Line
+	6610 8530 6930 8530
+Wire Wire Line
+	6610 8800 6610 8960
+Connection ~ 6610 8960
+Wire Wire Line
+	6610 8960 6160 8960
+Wire Wire Line
+	6930 8590 6930 8530
+Connection ~ 6930 8530
+Wire Wire Line
+	6930 8790 6930 8960
+Connection ~ 6930 8960
+Wire Wire Line
+	6930 8960 6610 8960
+$Comp
+L power:+3.3V #PWR?
+U 1 1 639F74ED
+P 6930 8190
+F 0 "#PWR?" H 6930 8040 50  0001 C CNN
+F 1 "+3.3V" H 6930 8340 50  0000 C CNN
+F 2 "" H 6930 8190 50  0001 C CNN
+F 3 "" H 6930 8190 50  0001 C CNN
+	1    6930 8190
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5290 8160 5290 8530
+Text Notes 1970 9110 0    79   ~ 0
+24V-12V Power Supply
+Text Notes 5580 9420 0    79   ~ 0
+5V-3.3V Power Supply
+Text Notes 1910 10730 0    79   ~ 0
+12V-5V Power Supply
+Wire Wire Line
+	6930 8220 6930 8190
+Wire Wire Line
+	6930 8420 6930 8470
+Wire Wire Line
+	7170 8960 7170 8910
+Wire Wire Line
+	7170 8360 7170 8310
+Wire Wire Line
+	7170 8310 7030 8310
+Wire Wire Line
+	7030 8310 7030 8470
+Wire Wire Line
+	7030 8470 6930 8470
+Connection ~ 6930 8470
+Wire Wire Line
+	6930 8470 6930 8530
+Wire Wire Line
+	7170 8560 7170 8610
+Wire Wire Line
+	4180 7790 4180 7880
+Wire Wire Line
+	4470 7820 4280 7820
+Wire Wire Line
+	4280 7820 4280 8200
+Wire Wire Line
+	4280 8200 4180 8200
+Wire Wire Line
+	3900 9270 3900 9360
+Wire Wire Line
+	4140 9300 4000 9300
+Wire Wire Line
+	4000 9300 4000 9710
+Wire Wire Line
+	4000 9710 3900 9710
+$EndSCHEMATC
