@@ -19,7 +19,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "dma.h"
+#include "fatfs.h"
 #include "i2c.h"
+#include "spi.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -35,6 +37,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+FATFS fs;
+FIL fil;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -116,7 +120,18 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
+  MX_SPI1_Init();
+  MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
+	
+	  HAL_Delay(500);
+  f_mount(&fs, "", 0);
+  f_open(&fil, "write.txt", FA_OPEN_ALWAYS | FA_WRITE | FA_READ);
+  f_lseek(&fil, fil.fsize);
+  f_puts("Hello from Nizar\n", &fil);
+  f_close(&fil);
+
+
 	//I2C_ClearBusyFlagErratum();
 	//hi2c1.State = HAL_I2C_STATE_READY;
   find_LSM_address();
