@@ -28,6 +28,7 @@
 #include "fatfs_sd.h"
 #include "string.h"
 #include "stdio.h"
+#include "stdbool.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -141,11 +142,11 @@ int main(void)
   	f_getfree("", &fre_clust, &pfs);
 
   	total = (uint32_t)((pfs->n_fatent - 2) * pfs->csize * 0.5);
-  	sprintf (buffer, "SD CARD Total Size: \t%lu\n",total);
+  	sprintf (buffer, "SD CARD Total Size: \t%1u\n",total);
   	send_uart(buffer);
   	clear_buffer();
   	free_space = (uint32_t)(fre_clust * pfs->csize * 0.5);
-  	sprintf (buffer, "SD CARD Free Space: \t%lu\n\n",free_space);
+  	sprintf (buffer, "SD CARD Free Space: \t%1u\n\n",free_space);
   	send_uart(buffer);
   	clear_buffer();
 
