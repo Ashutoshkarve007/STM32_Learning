@@ -189,7 +189,7 @@ int main(void)
   	fresult = f_open(&fil, "file2.txt", FA_CREATE_ALWAYS | FA_WRITE);
 
   	/* Writing text */
-  	strcpy (buffer, "This is File2.txt, written using ...f_write... and it says Hello from Controllerstech\n");
+  	strcpy (buffer, "This is File2.txt, written using ...f_write... and it says Hello from QuroLabs\n");
 
   	fresult = f_write(&fil, buffer, bufsize(buffer), &bw);
 
@@ -253,15 +253,15 @@ int main(void)
 
   	/*************************REMOVING FILES FROM THE DIRECTORY ****************************/
 
-  	fresult = f_unlink("/file1.txt");
-  	if (fresult == FR_OK) send_uart("file1.txt removed successfully...\n");
+//  	fresult = f_unlink("/file1.txt");
+//  	if (fresult == FR_OK) send_uart("file1.txt removed successfully...\n");
 
-  	fresult = f_unlink("/file2.txt");
-  	if (fresult == FR_OK) send_uart("file2.txt removed successfully...\n");
+//  	fresult = f_unlink("/file2.txt");
+//  	if (fresult == FR_OK) send_uart("file2.txt removed successfully...\n");
 
-  	/* Unmount SDCARD */
-  	fresult = f_mount(NULL, "/", 1);
-  	if (fresult == FR_OK) send_uart ("SD CARD UNMOUNTED successfully...\n");
+//  	/* Unmount SDCARD */
+//  	fresult = f_mount(NULL, "/", 1);
+//  	if (fresult == FR_OK) send_uart ("SD CARD UNMOUNTED successfully...\n");
 
 
   /* USER CODE END 2 */
@@ -270,6 +270,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+//		send_uart("Hello");
+//		HAL_Delay(250);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
