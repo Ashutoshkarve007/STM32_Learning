@@ -30,6 +30,7 @@
 "rma_sd_card\ff.o"
 "rma_sd_card\ff_gen_drv.o"
 "rma_sd_card\syscall.o"
+"rma_sd_card\ccsbcs.o"
 --strict --scatter "RMA_SD_Card\RMA_SD_Card.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
