@@ -78,6 +78,7 @@ void Error_Handler(void);
 #define ESP_TX_GPIO_Port GPIOA
 #define SOL_Val_Pin GPIO_PIN_5
 #define SOL_Val_GPIO_Port GPIOB
+
 /* USER CODE BEGIN Private defines */
 #define updateDelayCount 20
 /* USER CODE END Private defines */
@@ -87,5 +88,3 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
