@@ -45,7 +45,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint32_t Flash_Address=0x08006000;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -91,18 +91,65 @@ int main(void)
   MX_SPI1_Init();
   MX_USB_PCD_Init();
   /* USER CODE BEGIN 2 */
-
+	HAL_FLASH_Unlock();        //Unlock the flash memory
+	HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD,Flash_Address,51);
+	HAL_FLASH_Lock();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_TogglePin(GPIOE, 8);
-	  HAL_Delay(1000);
-	  HAL_GPIO_TogglePin(GPIOE, 9);
-	  HAL_Delay(1000);
-	  HAL_GPIO_WritePin(GPIOE, 13, 1);
+	  HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+	  HAL_Delay(50);
+	  HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+	  HAL_Delay(50);
+	  HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD7_GPIO_Port, LD7_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD9_GPIO_Port, LD9_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD10_GPIO_Port, LD10_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD8_GPIO_Port, LD8_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD6_GPIO_Port, LD6_Pin);
+		HAL_Delay(50);
+//			  HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+	  HAL_Delay(50);
+	  HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+	  HAL_Delay(50);
+//	  HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD7_GPIO_Port, LD7_Pin);
+		HAL_Delay(50);
+//		HAL_GPIO_TogglePin(LD9_GPIO_Port, LD9_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD10_GPIO_Port, LD10_Pin);
+		HAL_Delay(50);
+//		HAL_GPIO_TogglePin(LD8_GPIO_Port, LD8_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD6_GPIO_Port, LD6_Pin);
+		HAL_Delay(50);
+//			  HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+//	  HAL_Delay(50);
+	  HAL_GPIO_TogglePin(LD6_GPIO_Port, LD6_Pin);
+	  HAL_Delay(50);
+	  HAL_GPIO_TogglePin(LD8_GPIO_Port, LD8_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD10_GPIO_Port, LD10_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD9_GPIO_Port, LD9_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD7_GPIO_Port, LD7_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+		HAL_Delay(50);
+		HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+	  HAL_Delay(50);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
