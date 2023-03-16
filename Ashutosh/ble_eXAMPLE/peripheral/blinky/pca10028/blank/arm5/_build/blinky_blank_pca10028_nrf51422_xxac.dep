@@ -1,0 +1,6 @@
+Dependencies for Project 'blinky_blank_pca10028', Target 'nrf51422_xxac': (DO NOT MODIFY !)
+CompilerVersion: <unknown>
+F (..\..\..\main.c)(0x5673A804)()
+F (..\..\..\Abstract.txt)(0x5673A804)()
+F (..\..\..\license.txt)(0x5673A826)()
+F (C:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Drivers/4.0.0-2.alpha/delay/nrf_delay.c)(0x5673A802)()

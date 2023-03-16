@@ -1,0 +1,33 @@
+-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m0 -c
+-fno-rtti -funsigned-char -fshort-enums -fshort-wchar
+-D__MICROLIB -gdwarf-4 -O3 -ffunction-sections --c99
+-I./RTE/_nrf51422_xxac_s130
+-I./RTE/nRF_BLE/nRF51422_xxAC
+-I./RTE/nRF_Drivers/nRF51422_xxAC
+-I./RTE/nRF_Libraries/nRF51422_xxAC
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_BLE/4.0.0-2.alpha/ble_db_discovery
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_BLE/4.0.0-2.alpha/ble_services/ble_bas_c
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_BLE/4.0.0-2.alpha/ble_services/ble_hrs_c
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_BLE/4.0.0-2.alpha/common
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_BLE/4.0.0-2.alpha/device_manager
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_DeviceFamilyPack/8.52.0/Device/Include
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Drivers/4.0.0-2.alpha/common
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Drivers/4.0.0-2.alpha/config
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Drivers/4.0.0-2.alpha/delay
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Drivers/4.0.0-2.alpha/gpiote
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Drivers/4.0.0-2.alpha/hal
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Drivers/4.0.0-2.alpha/pstorage
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Drivers/4.0.0-2.alpha/uart
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Drivers_External/1.2.1-2.alpha/segger_rtt
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Examples/11.0.0-2.alpha/bsp
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Libraries/4.0.0-2.alpha/button
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Libraries/4.0.0-2.alpha/fifo
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Libraries/4.0.0-2.alpha/timer
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Libraries/4.0.0-2.alpha/trace
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Libraries/4.0.0-2.alpha/uart
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_Libraries/4.0.0-2.alpha/util
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_SoftDevice_Common/2.0.0-2.alpha/softdevice_handler
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_SoftDevice_S130/2.0.0-7.alpha/headers
+-IC:/Users/Ashutosh/AppData/Local/Arm/Packs/NordicSemiconductor/nRF_SoftDevice_S130/2.0.0-7.alpha/headers/nrf51
+-D__UVISION_VERSION="538" -D_RTE_ -DNRF51422_XXAC -D_RTE_ -D__HEAP_SIZE="0" -DBLE_STACK_SUPPORT_REQD -DS130 -DBOARD_PCA10028 -DBSP_UART_SUPPORT -DNRF_LOG_USES_UART="1" -DNRF51 -DSOFTDEVICE_PRESENT -DSWI_DISABLE0
+-o ./_build/main.o -MD "../../../main.c"

@@ -429,6 +429,36 @@
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f3xx_hal_msp.c</FilePath>
             </File>
+            <File>
+              <FileName>flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>Accelerometer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\Accelerometer.c</FilePath>
+            </File>
+            <File>
+              <FileName>Gyro.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\Gyro.c</FilePath>
+            </File>
+            <File>
+              <FileName>DisplayData.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\DisplayData.c</FilePath>
+            </File>
+            <File>
+              <FileName>StringUtilities.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\StringUtilities.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\UART.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
